@@ -20,3 +20,5 @@
   * Length: 27mm
   * Width: 27mm
   * Height: 4mm
+
+![OLED Screen](https://github.com/SpicyLimes/ESP32-S3-Files/blob/16e697311770f7270716758252da450f2b8f65a9/0.96%22%20OLED%20Screen/0.96in%20OLED%20Screen%20Image.jpg)
