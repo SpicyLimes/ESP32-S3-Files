@@ -2,3 +2,255 @@
 # esphome-web-c32654
 # File Description: External Package
 
+# [ ==== Matrix Keypad Configuration ==== ] #
+matrix_keypad:
+  id: keypad
+  rows:
+    - pin: 
+        number: GPIO1    # Row 1
+        mode:
+          output: true
+    - pin: 
+        number: GPIO2    # Row 2
+        mode:
+          output: true
+    - pin: 
+        number: GPIO42   # Row 3
+        mode:
+          output: true
+  columns:
+    - pin: 
+        number: GPIO41   # Column 1
+        mode:
+          input: true
+          pullup: true
+    - pin: 
+        number: GPIO40   # Column 2
+        mode:
+          input: true
+          pullup: true
+    - pin: 
+        number: GPIO39   # Column 3
+        mode:
+          input: true
+          pullup: true
+  keys: "123456789"
+  has_diodes: false
+
+# [ ==== Binary Sensors for Each Key ==== ] #
+binary_sensor:
+  # Key 1 - Kitchen Lights Toggle (RED)
+  - platform: matrix_keypad
+    keypad_id: keypad
+    id: key_1
+    key: "1"
+    name: "Key 1 - Kitchen Lights"
+    on_press:
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 0%
+          blue: 0%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.kitchen_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+    
+  # Key 2 - Bar Lights Toggle (ORANGE)
+  - platform: matrix_keypad
+    keypad_id: keypad
+    id: key_2
+    key: "2"
+    name: "Key 2 - Bar Lights"
+    on_press:
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 50%
+          blue: 0%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.bar_lights
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+    
+  # Key 3 - Studio Lights Toggle (YELLOW)
+  - platform: matrix_keypad
+    keypad_id: keypad
+    id: key_3
+    key: "3"
+    name: "Key 3 - Studio Lights"
+    on_press:
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 100%
+          blue: 0%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.studio_lights
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+  
+  # Key 4 - Office Lights/LEDs Toggle (GREEN)
+  - platform: matrix_keypad
+    keypad_id: keypad
+    id: key_4
+    key: "4"
+    name: "Key 4 - Office Lights"
+    on_press:
+      - light.turn_on:
+          id: rgb_led
+          red: 0%
+          green: 100%
+          blue: 0%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.office_lights_leds
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+    
+  # Key 5 - Bathroom Lights Toggle (CYAN)
+  - platform: matrix_keypad
+    keypad_id: keypad
+    id: key_5
+    key: "5"
+    name: "Key 5 - Bathroom Lights"
+    on_press:
+      - light.turn_on:
+          id: rgb_led
+          red: 0%
+          green: 100%
+          blue: 100%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.bathroom_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+    
+  # Key 6 - Closet Lights Toggle (BLUE)
+  - platform: matrix_keypad
+    keypad_id: keypad
+    id: key_6
+    key: "6"
+    name: "Key 6 - Closet Lights"
+    on_press:
+      - light.turn_on:
+          id: rgb_led
+          red: 0%
+          green: 0%
+          blue: 100%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.closet_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+  
+  # Key 7 - Miami Vice Lights Script (PURPLE)
+  - platform: matrix_keypad
+    keypad_id: keypad
+    id: key_7
+    key: "7"
+    name: "Key 7 - Miami Vice Lights"
+    on_press:
+      - light.turn_on:
+          id: rgb_led
+          red: 50%
+          green: 0%
+          blue: 100%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: script.turn_on
+          data:
+            entity_id: script.studio_and_office_miami_vice_lights
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+    
+  # Key 8 - Night Light Studio Script (PINK)
+  - platform: matrix_keypad
+    keypad_id: keypad
+    id: key_8
+    key: "8"
+    name: "Key 8 - Night Light Studio"
+    on_press:
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 0%
+          blue: 50%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: script.turn_on
+          data:
+            entity_id: script.night_light_studio
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+    
+  # Key 9 - All Apartment Lights OFF (WHITE)
+  - platform: matrix_keypad
+    keypad_id: keypad
+    id: key_9
+    key: "9"
+    name: "Key 9 - All Lights OFF"
+    on_press:
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 100%
+          blue: 100%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.turn_off
+          data:
+            entity_id: light.apartment_lights
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
