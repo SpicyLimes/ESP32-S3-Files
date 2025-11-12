@@ -39,13 +39,22 @@ matrix_keypad:
 
 # [ ==== Binary Sensors for Each Key ==== ] #
 binary_sensor:
-  # Key 1 - Kitchen Lights Toggle (RED)
-  - platform: matrix_keypad
+- platform: matrix_keypad
     keypad_id: keypad
     id: key_1
     key: "1"
-    name: "Key 1 - Kitchen Lights"
+    name: "Key 1"
     on_press:
+      - lambda: |-
+          id(key_1_count) += 1;
+          id(key_1_presses_today).publish_state(id(key_1_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(key_1_last_pressed).publish_state(timestamp);
       - light.turn_on:
           id: rgb_led
           red: 100%
@@ -62,14 +71,23 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 50%
-    
-  # Key 2 - Bar Lights Toggle (ORANGE)
+
   - platform: matrix_keypad
     keypad_id: keypad
     id: key_2
     key: "2"
-    name: "Key 2 - Bar Lights"
+    name: "Key 2"
     on_press:
+      - lambda: |-
+          id(key_2_count) += 1;
+          id(key_2_presses_today).publish_state(id(key_2_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(key_2_last_pressed).publish_state(timestamp);
       - light.turn_on:
           id: rgb_led
           red: 100%
@@ -86,14 +104,23 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 50%
-    
-  # Key 3 - Studio Lights Toggle (YELLOW)
+
   - platform: matrix_keypad
     keypad_id: keypad
     id: key_3
     key: "3"
-    name: "Key 3 - Studio Lights"
+    name: "Key 3"
     on_press:
+      - lambda: |-
+          id(key_3_count) += 1;
+          id(key_3_presses_today).publish_state(id(key_3_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(key_3_last_pressed).publish_state(timestamp);
       - light.turn_on:
           id: rgb_led
           red: 100%
@@ -110,14 +137,23 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 50%
-  
-  # Key 4 - Office Lights/LEDs Toggle (GREEN)
+
   - platform: matrix_keypad
     keypad_id: keypad
     id: key_4
     key: "4"
-    name: "Key 4 - Office Lights"
+    name: "Key 4"
     on_press:
+      - lambda: |-
+          id(key_4_count) += 1;
+          id(key_4_presses_today).publish_state(id(key_4_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(key_4_last_pressed).publish_state(timestamp);
       - light.turn_on:
           id: rgb_led
           red: 0%
@@ -134,14 +170,23 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 50%
-    
-  # Key 5 - Bathroom Lights Toggle (CYAN)
+
   - platform: matrix_keypad
     keypad_id: keypad
     id: key_5
     key: "5"
-    name: "Key 5 - Bathroom Lights"
+    name: "Key 5"
     on_press:
+      - lambda: |-
+          id(key_5_count) += 1;
+          id(key_5_presses_today).publish_state(id(key_5_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(key_5_last_pressed).publish_state(timestamp);
       - light.turn_on:
           id: rgb_led
           red: 0%
@@ -158,14 +203,23 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 50%
-    
-  # Key 6 - Closet Lights Toggle (BLUE)
+
   - platform: matrix_keypad
     keypad_id: keypad
     id: key_6
     key: "6"
-    name: "Key 6 - Closet Lights"
+    name: "Key 6"
     on_press:
+      - lambda: |-
+          id(key_6_count) += 1;
+          id(key_6_presses_today).publish_state(id(key_6_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(key_6_last_pressed).publish_state(timestamp);
       - light.turn_on:
           id: rgb_led
           red: 0%
@@ -182,14 +236,23 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 50%
-  
-  # Key 7 - Miami Vice Lights Script (PURPLE)
+
   - platform: matrix_keypad
     keypad_id: keypad
     id: key_7
     key: "7"
-    name: "Key 7 - Miami Vice Lights"
+    name: "Key 7"
     on_press:
+      - lambda: |-
+          id(key_7_count) += 1;
+          id(key_7_presses_today).publish_state(id(key_7_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(key_7_last_pressed).publish_state(timestamp);
       - light.turn_on:
           id: rgb_led
           red: 50%
@@ -206,14 +269,23 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 50%
-    
-  # Key 8 - Night Light Studio Script (PINK)
+
   - platform: matrix_keypad
     keypad_id: keypad
     id: key_8
     key: "8"
-    name: "Key 8 - Night Light Studio"
+    name: "Key 8"
     on_press:
+      - lambda: |-
+          id(key_8_count) += 1;
+          id(key_8_presses_today).publish_state(id(key_8_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(key_8_last_pressed).publish_state(timestamp);
       - light.turn_on:
           id: rgb_led
           red: 100%
@@ -230,14 +302,23 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 50%
-    
-  # Key 9 - All Apartment Lights OFF (WHITE)
+
   - platform: matrix_keypad
     keypad_id: keypad
     id: key_9
     key: "9"
-    name: "Key 9 - All Lights OFF"
+    name: "Key 9"
     on_press:
+      - lambda: |-
+          id(key_9_count) += 1;
+          id(key_9_presses_today).publish_state(id(key_9_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(key_9_last_pressed).publish_state(timestamp);
       - light.turn_on:
           id: rgb_led
           red: 100%
