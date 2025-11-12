@@ -26,16 +26,13 @@ wifi:
     then:
       - light.turn_on:
           id: rgb_led
-          # Color: Green / 50%
-          red: 0%
-          green: 100%
-          blue: 0%
+          effect: addressable_rainbow
           brightness: 50%
   on_disconnect:
     then:
       - light.turn_on:
           id: rgb_led
-          # Color: Red / 100%
+          effect: pulse
           red: 100%
           green: 0%
           blue: 0%
@@ -90,7 +87,7 @@ light:
     chipset: WS2812
     name: "ESP32-S3 RGB LED"
     id: rgb_led
-    restore_mode: RESTORE_DEFAULT_ON
+    restore_mode: RESTORE_DEFAULT_OFF
     default_transition_length: 1s
     effects:
       - pulse:
@@ -99,9 +96,9 @@ light:
       - addressable_rainbow:
 
 # [ ==== External Packages ==== ] #
-# packages:
-#  remote_package_files:
-#    url: https://github.com/SpicyLimes/ESP32-S3-Files
-#    files: YAML-Configs/ESP32-S2_c32654-Package_v1.yaml
-#    ref: main
-#    refresh: 5min
+packages:
+ remote_package_files:
+   url: https://github.com/SpicyLimes/ESP32-S3-Files
+   files: YAML-Configs/ESP32-S2_c32654-Package_v1.yaml
+   ref: main
+   refresh: 5min
