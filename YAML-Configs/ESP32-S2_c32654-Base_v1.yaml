@@ -62,10 +62,6 @@ button:
 
 # [ ==== Text Sensors ==== ] #
 text_sensor:
-  - platform: homeassistant
-    id: weatherflow_forecast
-    entity_id: weather.forecast_ftw_alliance
-    internal: true
   - platform: wifi_info
     ip_address:
       name: "ESP32-S3 IP Address"
