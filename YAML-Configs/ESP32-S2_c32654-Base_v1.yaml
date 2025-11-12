@@ -28,6 +28,9 @@ wifi:
           id: rgb_led
           effect: addressable_rainbow
           brightness: 50%
+      - delay: 5s
+      - light.turn_off:
+          id: rgb_led
   on_disconnect:
     then:
       - light.turn_on:
