@@ -41,10 +41,6 @@ button:
 
 # [ ==== Text Sensors ==== ] #
 text_sensor:
-  - platform: homeassistant
-    id: weatherflow_forecast
-    entity_id: weather.forecast_ftw_alliance
-    internal: true
   - platform: wifi_info
     ip_address:
       name: "ESP32-S3 IP Address"
@@ -83,7 +79,7 @@ light:
 # [ ==== External Packages ==== ] #
 # packages:
 #  remote_package_files:
-#    url: https://github.com/SpicyLimes/ESP32-2432S028R-CYD-Files
-#    files: YAML-Configs/ESP-Screen-Remote-2-v1-Package.yaml
+#    url: https://github.com/SpicyLimes/Repo
+#    files: YAML-Configs/Package.yaml
 #    ref: main
 #    refresh: 5min
