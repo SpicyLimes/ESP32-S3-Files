@@ -275,6 +275,6 @@ light:
 packages:
  remote_package_files:
    url: https://github.com/SpicyLimes/ESP32-S3-Files
-   files: YAML-Configs/ESP32-S2_c32654-Package_v1.yaml
+   files: YAML-Configs/ESP32-S3_c32654-Package_v1.yaml
    ref: main
    refresh: 5min
