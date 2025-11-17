@@ -39,7 +39,7 @@ matrix_keypad:
 
 # [ ==== Binary Sensors for Each Key ==== ] #
 binary_sensor:
-- platform: matrix_keypad
+  - platform: matrix_keypad
     keypad_id: keypad
     id: key_1
     key: "1"
