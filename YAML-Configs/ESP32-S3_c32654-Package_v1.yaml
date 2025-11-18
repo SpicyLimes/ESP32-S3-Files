@@ -74,7 +74,7 @@ binary_sensor:
       - homeassistant.service:
           service: light.toggle
           data:
-            entity_id: light.kitchen_lights_switch
+            entity_id: light.bathroom_lights_switch
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -107,7 +107,7 @@ binary_sensor:
       - homeassistant.service:
           service: light.toggle
           data:
-            entity_id: light.bar_lights
+            entity_id: light.bathroom_lights_switch
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -140,7 +140,7 @@ binary_sensor:
       - homeassistant.service:
           service: light.toggle
           data:
-            entity_id: light.studio_lights
+            entity_id: light.bathroom_lights_switch
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -173,7 +173,7 @@ binary_sensor:
       - homeassistant.service:
           service: light.toggle
           data:
-            entity_id: light.office_lights_leds
+            entity_id: light.bathroom_lights_switch
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -239,7 +239,7 @@ binary_sensor:
       - homeassistant.service:
           service: light.toggle
           data:
-            entity_id: light.closet_lights_switch
+            entity_id: light.bathroom_lights_switch
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -270,9 +270,9 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.service:
-          service: script.turn_on
+          service: light.toggle
           data:
-            entity_id: script.studio_and_office_miami_vice_lights
+            entity_id: light.bathroom_lights_switch
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -303,9 +303,9 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.service:
-          service: script.turn_on
+          service: light.toggle
           data:
-            entity_id: script.night_light_studio
+            entity_id: light.bathroom_lights_switch
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -336,9 +336,9 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.service:
-          service: light.turn_off
+          service: light.toggle
           data:
-            entity_id: light.apartment_lights
+            entity_id: light.bathroom_lights_switch
       - delay: 10s
       - light.turn_on:
           id: rgb_led
