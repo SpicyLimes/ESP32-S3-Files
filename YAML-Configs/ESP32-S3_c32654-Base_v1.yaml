@@ -1,7 +1,7 @@
 # [ ==== ESP Home Info ==== ] #
 esphome:
   name: esphome-web-c32654
-  friendly_name: ESPHome Macro Keypad
+  friendly_name: ESPHome MacroPad S3
   min_version: 2025.9.0
   name_add_mac_suffix: false
 
@@ -60,60 +60,60 @@ time:
         hours: 0
         then:
           - lambda: |-
-              id(key_1_count) = 0;
-              id(key_2_count) = 0;
-              id(key_3_count) = 0;
-              id(key_4_count) = 0;
-              id(key_5_count) = 0;
-              id(key_6_count) = 0;
-              id(key_7_count) = 0;
-              id(key_8_count) = 0;
-              id(key_9_count) = 0;
-              id(key_1_presses_today).publish_state(0);
-              id(key_2_presses_today).publish_state(0);
-              id(key_3_presses_today).publish_state(0);
-              id(key_4_presses_today).publish_state(0);
-              id(key_5_presses_today).publish_state(0);
-              id(key_6_presses_today).publish_state(0);
-              id(key_7_presses_today).publish_state(0);
-              id(key_8_presses_today).publish_state(0);
-              id(key_9_presses_today).publish_state(0);
+              id(macropad_s3_key_1_count) = 0;
+              id(macropad_s3_key_2_count) = 0;
+              id(macropad_s3_key_3_count) = 0;
+              id(macropad_s3_key_4_count) = 0;
+              id(macropad_s3_key_5_count) = 0;
+              id(macropad_s3_key_6_count) = 0;
+              id(macropad_s3_key_7_count) = 0;
+              id(macropad_s3_key_8_count) = 0;
+              id(macropad_s3_key_9_count) = 0;
+              id(macropad_s3_key_1_presses_today).publish_state(0);
+              id(macropad_s3_key_2_presses_today).publish_state(0);
+              id(macropad_s3_key_3_presses_today).publish_state(0);
+              id(macropad_s3_key_4_presses_today).publish_state(0);
+              id(macropad_s3_key_5_presses_today).publish_state(0);
+              id(macropad_s3_key_6_presses_today).publish_state(0);
+              id(macropad_s3_key_7_presses_today).publish_state(0);
+              id(macropad_s3_key_8_presses_today).publish_state(0);
+              id(macropad_s3_key_9_presses_today).publish_state(0);
 
 # [ ==== Button Press Tracking ==== ] #
 globals:
-  - id: key_1_count
+  - id: macropad_s3_key_1_count
     type: int
     restore_value: no
     initial_value: '0'
-  - id: key_2_count
+  - id: macropad_s3_key_2_count
     type: int
     restore_value: no
     initial_value: '0'
-  - id: key_3_count
+  - id: macropad_s3_key_3_count
     type: int
     restore_value: no
     initial_value: '0'
-  - id: key_4_count
+  - id: macropad_s3_key_4_count
     type: int
     restore_value: no
     initial_value: '0'
-  - id: key_5_count
+  - id: macropad_s3_key_5_count
     type: int
     restore_value: no
     initial_value: '0'
-  - id: key_6_count
+  - id: macropad_s3_key_6_count
     type: int
     restore_value: no
     initial_value: '0'
-  - id: key_7_count
+  - id: macropad_s3_key_7_count
     type: int
     restore_value: no
     initial_value: '0'
-  - id: key_8_count
+  - id: macropad_s3_key_8_count
     type: int
     restore_value: no
     initial_value: '0'
-  - id: key_9_count
+  - id: macropad_s3_key_9_count
     type: int
     restore_value: no
     initial_value: '0'
@@ -121,138 +121,126 @@ globals:
 # [ ==== Buttons ==== ] #
 button:
   - platform: factory_reset
-    name: Factory Reset
+    name: "MacroPad S3 Factory Reset"
 
 # [ ==== Sensors ==== ] #
 sensor:
   - platform: template
-    name: "Key 1 Presses Today"
-    id: key_1_presses_today
+    name: "MacroPad S3 Key 1 Presses Today"
+    id: macropad_s3_key_1_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
-    lambda: 'return id(key_1_count);'
+    lambda: 'return id(macropad_s3_key_1_count);'
   - platform: template
-    name: "Key 2 Presses Today"
-    id: key_2_presses_today
+    name: "MacroPad S3 Key 2 Presses Today"
+    id: macropad_s3_key_2_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
-    lambda: 'return id(key_2_count);'
+    lambda: 'return id(macropad_s3_key_2_count);'
   - platform: template
-    name: "Key 3 Presses Today"
-    id: key_3_presses_today
+    name: "MacroPad S3 Key 3 Presses Today"
+    id: macropad_s3_key_3_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
-    lambda: 'return id(key_3_count);'
+    lambda: 'return id(macropad_s3_key_3_count);'
   - platform: template
-    name: "Key 4 Presses Today"
-    id: key_4_presses_today
+    name: "MacroPad S3 Key 4 Presses Today"
+    id: macropad_s3_key_4_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
-    lambda: 'return id(key_4_count);'
+    lambda: 'return id(macropad_s3_key_4_count);'
   - platform: template
-    name: "Key 5 Presses Today"
-    id: key_5_presses_today
+    name: "MacroPad S3 Key 5 Presses Today"
+    id: macropad_s3_key_5_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
-    lambda: 'return id(key_5_count);'
+    lambda: 'return id(macropad_s3_key_5_count);'
   - platform: template
-    name: "Key 6 Presses Today"
-    id: key_6_presses_today
+    name: "MacroPad S3 Key 6 Presses Today"
+    id: macropad_s3_key_6_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
-    lambda: 'return id(key_6_count);'
+    lambda: 'return id(macropad_s3_key_6_count);'
   - platform: template
-    name: "Key 7 Presses Today"
-    id: key_7_presses_today
+    name: "MacroPad S3 Key 7 Presses Today"
+    id: macropad_s3_key_7_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
-    lambda: 'return id(key_7_count);'
+    lambda: 'return id(macropad_s3_key_7_count);'
   - platform: template
-    name: "Key 8 Presses Today"
-    id: key_8_presses_today
+    name: "MacroPad S3 Key 8 Presses Today"
+    id: macropad_s3_key_8_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
-    lambda: 'return id(key_8_count);'
+    lambda: 'return id(macropad_s3_key_8_count);'
   - platform: template
-    name: "Key 9 Presses Today"
-    id: key_9_presses_today
+    name: "MacroPad S3 Key 9 Presses Today"
+    id: macropad_s3_key_9_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
-    lambda: 'return id(key_9_count);'
+    lambda: 'return id(macropad_s3_key_9_count);'
 
 # [ ==== Text Sensors ==== ] #
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "ESP32-S3 IP Address"
+      name: "MacroPad S3 IP Address"
   - platform: version
     name: "ESPHome Version"
   - platform: template
-    name: "Key 1 Last Pressed"
-    id: key_1_last_pressed
+    name: "MacroPad S3 Key 1 Last Pressed"
+    id: macropad_s3_key_1_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "Key 2 Last Pressed"
-    id: key_2_last_pressed
+    name: "MacroPad S3 Key 2 Last Pressed"
+    id: macropad_s3_key_2_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "Key 3 Last Pressed"
-    id: key_3_last_pressed
+    name: "MacroPad S3 Key 3 Last Pressed"
+    id: macropad_s3_key_3_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "Key 4 Last Pressed"
-    id: key_4_last_pressed
+    name: "MacroPad S3 Key 4 Last Pressed"
+    id: macropad_s3_key_4_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "Key 5 Last Pressed"
-    id: key_5_last_pressed
+    name: "MacroPad S3 Key 5 Last Pressed"
+    id: macropad_s3_key_5_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "Key 6 Last Pressed"
-    id: key_6_last_pressed
+    name: "MacroPad S3 Key 6 Last Pressed"
+    id: macropad_s3_key_6_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "Key 7 Last Pressed"
-    id: key_7_last_pressed
+    name: "MacroPad S3 Key 7 Last Pressed"
+    id: macropad_s3_key_7_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "Key 8 Last Pressed"
-    id: key_8_last_pressed
+    name: "MacroPad S3 Key 8 Last Pressed"
+    id: macropad_s3_key_8_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "Key 9 Last Pressed"
-    id: key_9_last_pressed
+    name: "MacroPad S3 Key 9 Last Pressed"
+    id: macropad_s3_key_9_last_pressed
     icon: mdi:clock-outline
     update_interval: never
-
-# [ ==== Binary Sensors ==== ] #
-binary_sensor:
-  - platform: gpio
-    pin:
-      number: GPIO0  # ESP32 Boot Button
-      ignore_strapping_warning: true
-      inverted: true
-      mode:
-        input: true
-        pullup: true
-    name: "ESP32-S3 Boot Button"
 
 # [ ==== Addressable RGB LED (NeoPixel/WS2812B) ==== ] #
 light:
@@ -261,7 +249,7 @@ light:
     pin: GPIO48
     num_leds: 1
     chipset: WS2812
-    name: "ESP32-S3 RGB LED"
+    name: "MacroPad S3 RGB LED"
     id: rgb_led
     restore_mode: RESTORE_DEFAULT_ON
     default_transition_length: 0.5s
