@@ -7,30 +7,30 @@ matrix_keypad:
   id: macropad_s3_keypad
   rows:
     - pin: 
-        number: GPIO1    # Row 1
+        number: GPIO8    # Row 1
         mode:
           output: true
     - pin: 
-        number: GPIO2    # Row 2
+        number: GPIO9    # Row 2
         mode:
           output: true
     - pin: 
-        number: GPIO42   # Row 3
+        number: GPIO10   # Row 3
         mode:
           output: true
   columns:
     - pin: 
-        number: GPIO41   # Column 1
+        number: GPIO11   # Column 1
         mode:
           input: true
           pullup: true
     - pin: 
-        number: GPIO40   # Column 2
+        number: GPIO12   # Column 2
         mode:
           input: true
           pullup: true
     - pin: 
-        number: GPIO39   # Column 3
+        number: GPIO13   # Column 3
         mode:
           input: true
           pullup: true
