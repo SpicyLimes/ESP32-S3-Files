@@ -1,0 +1,280 @@
+# ESPHome ArcadePad S3
+# esphome-web-c1e054
+# File Description: External Package
+
+# [ ==== Matrix Keypad Configuration ==== ] #
+matrix_keypad:
+  id: arcadepad_s3_keypad
+  rows:
+    - pin: 
+        number: GPIO8    # Row 1
+        mode:
+          output: true
+    - pin: 
+        number: GPIO9    # Row 2
+        mode:
+          output: true
+    - pin: 
+        number: GPIO10   # Row 3
+        mode:
+          output: true
+  columns:
+    - pin: 
+        number: GPIO11   # Column 1
+        mode:
+          input: true
+          pullup: true
+    - pin: 
+        number: GPIO12   # Column 2
+        mode:
+          input: true
+          pullup: true
+    - pin: 
+        number: GPIO13   # Column 3
+        mode:
+          input: true
+          pullup: true
+  keys: "1234567"
+  has_diodes: false
+
+# [ ==== Binary Sensors ==== ] #
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0  # ESP32 Boot Button
+      ignore_strapping_warning: true
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    name: "ArcadePad S3 Boot Button"
+  - platform: matrix_keypad
+    keypad_id: arcadepad_s3_keypad
+    id: arcadepad_s3_key_1
+    key: "1"
+    name: "ArcadePad S3 Key 1"
+    on_press:
+      - lambda: |-
+          id(arcadepad_s3_key_1_count) += 1;
+          id(arcadepad_s3_key_1_presses_today).publish_state(id(arcadepad_s3_key_1_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(arcadepad_s3_key_1_last_pressed).publish_state(timestamp);
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 0%
+          blue: 0%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.bathroom_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+
+  - platform: matrix_keypad
+    keypad_id: arcadepad_s3_keypad
+    id: arcadepad_s3_key_2
+    key: "2"
+    name: "ArcadePad S3 Key 2"
+    on_press:
+      - lambda: |-
+          id(arcadepad_s3_key_2_count) += 1;
+          id(arcadepad_s3_key_2_presses_today).publish_state(id(arcadepad_s3_key_2_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(arcadepad_s3_key_2_last_pressed).publish_state(timestamp);
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 50%
+          blue: 0%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.bathroom_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+
+  - platform: matrix_keypad
+    keypad_id: arcadepad_s3_keypad
+    id: arcadepad_s3_key_3
+    key: "3"
+    name: "ArcadePad S3 Key 3"
+    on_press:
+      - lambda: |-
+          id(arcadepad_s3_key_3_count) += 1;
+          id(arcadepad_s3_key_3_presses_today).publish_state(id(arcadepad_s3_key_3_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(arcadepad_s3_key_3_last_pressed).publish_state(timestamp);
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 100%
+          blue: 0%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.bathroom_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+
+  - platform: matrix_keypad
+    keypad_id: arcadepad_s3_keypad
+    id: arcadepad_s3_key_4
+    key: "4"
+    name: "ArcadePad S3 Key 4"
+    on_press:
+      - lambda: |-
+          id(arcadepad_s3_key_4_count) += 1;
+          id(arcadepad_s3_key_4_presses_today).publish_state(id(arcadepad_s3_key_4_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(arcadepad_s3_key_4_last_pressed).publish_state(timestamp);
+      - light.turn_on:
+          id: rgb_led
+          red: 0%
+          green: 100%
+          blue: 0%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.bathroom_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+
+  - platform: matrix_keypad
+    keypad_id: arcadepad_s3_keypad
+    id: arcadepad_s3_key_5
+    key: "5"
+    name: "ArcadePad S3 Key 5"
+    on_press:
+      - lambda: |-
+          id(arcadepad_s3_key_5_count) += 1;
+          id(arcadepad_s3_key_5_presses_today).publish_state(id(arcadepad_s3_key_5_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(arcadepad_s3_key_5_last_pressed).publish_state(timestamp);
+      - light.turn_on:
+          id: rgb_led
+          red: 0%
+          green: 100%
+          blue: 100%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.bathroom_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+
+  - platform: matrix_keypad
+    keypad_id: arcadepad_s3_keypad
+    id: arcadepad_s3_key_6
+    key: "6"
+    name: "ArcadePad S3 Key 6"
+    on_press:
+      - lambda: |-
+          id(arcadepad_s3_key_6_count) += 1;
+          id(arcadepad_s3_key_6_presses_today).publish_state(id(arcadepad_s3_key_6_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(arcadepad_s3_key_6_last_pressed).publish_state(timestamp);
+      - light.turn_on:
+          id: rgb_led
+          red: 0%
+          green: 0%
+          blue: 100%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.bathroom_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+
+  - platform: matrix_keypad
+    keypad_id: arcadepad_s3_keypad
+    id: arcadepad_s3_key_7
+    key: "7"
+    name: "ArcadePad S3 Key 7"
+    on_press:
+      - lambda: |-
+          id(arcadepad_s3_key_7_count) += 1;
+          id(arcadepad_s3_key_7_presses_today).publish_state(id(arcadepad_s3_key_7_count));
+          
+          auto time = id(ha_time).now();
+          char timestamp[64];
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+                    time.month, time.day_of_month, time.year,
+                    time.hour, time.minute, time.second);
+          id(arcadepad_s3_key_7_last_pressed).publish_state(timestamp);
+      - light.turn_on:
+          id: rgb_led
+          red: 50%
+          green: 0%
+          blue: 100%
+          brightness: 100%
+          effect: "none"
+      - homeassistant.service:
+          service: light.toggle
+          data:
+            entity_id: light.bathroom_lights_switch
+      - delay: 10s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
