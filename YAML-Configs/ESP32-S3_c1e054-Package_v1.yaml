@@ -2,21 +2,8 @@
 # esphome-web-c1e054
 # File Description: External Package
 
-# [ ==== Binary Sensors ==== ] #
+# [ ==== Binary Sensors (Arcade Buttons) ==== ] #
 binary_sensor:
-  # ESP32 Boot Button
-  - platform: gpio
-    pin:
-      number: GPIO0
-      ignore_strapping_warning: true
-      inverted: true
-      mode:
-        input: true
-        pullup: true
-    name: "ArcadePad S3 Boot Button"
-    icon: mdi:gesture-tap-button
-
-  # Arcade Button Configuration
   - platform: gpio
     id: arcadepad_s3_key_1
     pin:
@@ -27,6 +14,7 @@ binary_sensor:
       inverted: true
     name: "ArcadePad S3 Key 1"
     icon: mdi:gamepad-circle
+    internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_1_count) += 1;
@@ -65,6 +53,7 @@ binary_sensor:
       inverted: true
     name: "ArcadePad S3 Key 2"
     icon: mdi:gamepad-circle-up
+    internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_2_count) += 1;
@@ -103,6 +92,7 @@ binary_sensor:
       inverted: true
     name: "ArcadePad S3 Key 3"
     icon: mdi:gamepad-circle-right
+    internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_3_count) += 1;
@@ -141,6 +131,7 @@ binary_sensor:
       inverted: true
     name: "ArcadePad S3 Key 4"
     icon: mdi:nintendo-game-boy
+    internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_4_count) += 1;
@@ -179,6 +170,7 @@ binary_sensor:
       inverted: true
     name: "ArcadePad S3 Key 5"
     icon: mdi:gamepad-circle-down
+    internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_5_count) += 1;
@@ -217,6 +209,7 @@ binary_sensor:
       inverted: true
     name: "ArcadePad S3 Key 6"
     icon: mdi:gamepad-circle-left
+    internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_6_count) += 1;
@@ -255,6 +248,7 @@ binary_sensor:
       inverted: true
     name: "ArcadePad S3 Key 7"
     icon: mdi:gamepad-circle-outline
+    internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_7_count) += 1;
@@ -282,3 +276,14 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 50%
+# ESP32 Boot Button
+#  - platform: gpio
+#    pin:
+#      number: GPIO0
+#      ignore_strapping_warning: true
+#      inverted: true
+#      mode:
+#        input: true
+#        pullup: true
+#    name: "ArcadePad S3 Boot Button"
+#    icon: mdi:gesture-tap-button
