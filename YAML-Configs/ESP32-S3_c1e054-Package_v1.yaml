@@ -54,7 +54,7 @@ binary_sensor:
           effect: rainbow
           brightness: 50%
 
-  - platform: matrix_keypad
+  - platform: gpio
     id: arcadepad_s3_key_2
     pin:
       number: GPIO5
@@ -91,7 +91,7 @@ binary_sensor:
           effect: rainbow
           brightness: 50%
 
-  - platform: matrix_keypad
+  - platform: gpio
     id: arcadepad_s3_key_3
     pin:
       number: GPIO6
@@ -128,7 +128,7 @@ binary_sensor:
           effect: rainbow
           brightness: 50%
 
-  - platform: matrix_keypad
+  - platform: gpio
     id: arcadepad_s3_key_4
     pin:
       number: GPIO7
@@ -165,7 +165,7 @@ binary_sensor:
           effect: rainbow
           brightness: 50%
 
-  - platform: matrix_keypad
+  - platform: gpio
     id: arcadepad_s3_key_5
     pin:
       number: GPIO15
@@ -202,7 +202,7 @@ binary_sensor:
           effect: rainbow
           brightness: 50%
 
-  - platform: matrix_keypad
+  - platform: gpio
     id: arcadepad_s3_key_6
     pin:
       number: GPIO16
@@ -239,7 +239,7 @@ binary_sensor:
           effect: rainbow
           brightness: 50%
 
-  - platform: matrix_keypad
+  - platform: gpio
     id: arcadepad_s3_key_7
     pin:
       number: GPIO17
