@@ -27,7 +27,7 @@ wifi:
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
 #          red: 0%
 #          green: 50%
 #          blue: 50%
@@ -109,7 +109,7 @@ globals:
 # [ ==== Buttons ==== ] #
 button:
   - platform: factory_reset
-    name: "ArcadePad S3 Factory Reset"
+    name: "Factory Reset - ArcadePad S3"
 
 # [ ==== Sensors ==== ] #
 sensor:
@@ -167,10 +167,10 @@ sensor:
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "ArcadePad S3 IP Address"
+      name: "IP Address - ArcadePad S3"
       icon: mdi:ip-network
   - platform: version
-    name: "ESPHome Version"
+    name: "ESPHome Version - ArcadePad S3"
     icon: mdi:car-esp
   - platform: template
     name: "Last Pressed - Key 1 - ArcadePad S3"
@@ -215,7 +215,7 @@ light:
     pin: GPIO48
     num_leds: 1
     chipset: WS2812
-    name: "ArcadePad S3 RGB LED"
+    name: "RGB LED - ArcadePad S3"
     id: rgb_led
     restore_mode: RESTORE_DEFAULT_ON
     default_transition_length: 0.5s
