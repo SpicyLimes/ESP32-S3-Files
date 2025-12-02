@@ -24,6 +24,7 @@ binary_sensor:
       mode:
         input: true
         pullup: true
+      inverted: true
     name: "ArcadePad S3 Key 1"
     icon: mdi:gamepad-circle
     on_press:
@@ -61,6 +62,7 @@ binary_sensor:
       mode:
         input: true
         pullup: true
+      inverted: true
     name: "ArcadePad S3 Key 2"
     icon: mdi:gamepad-circle-up
     on_press:
@@ -98,6 +100,7 @@ binary_sensor:
       mode:
         input: true
         pullup: true
+      inverted: true
     name: "ArcadePad S3 Key 3"
     icon: mdi:gamepad-circle-right
     on_press:
@@ -135,6 +138,7 @@ binary_sensor:
       mode:
         input: true
         pullup: true
+      inverted: true
     name: "ArcadePad S3 Key 4"
     icon: mdi:nintendo-game-boy
     on_press:
@@ -172,6 +176,7 @@ binary_sensor:
       mode:
         input: true
         pullup: true
+      inverted: true
     name: "ArcadePad S3 Key 5"
     icon: mdi:gamepad-circle-down
     on_press:
@@ -209,6 +214,7 @@ binary_sensor:
       mode:
         input: true
         pullup: true
+      inverted: true
     name: "ArcadePad S3 Key 6"
     icon: mdi:gamepad-circle-left
     on_press:
@@ -246,6 +252,7 @@ binary_sensor:
       mode:
         input: true
         pullup: true
+      inverted: true
     name: "ArcadePad S3 Key 7"
     icon: mdi:gamepad-circle-outline
     on_press:
