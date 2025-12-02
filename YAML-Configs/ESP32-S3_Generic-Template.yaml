@@ -82,4 +82,4 @@ light:
 #    url: https://github.com/SpicyLimes/Repo
 #    files: YAML-Configs/Package.yaml
 #    ref: main
-#    refresh: 5min
+#    refresh: 0s
