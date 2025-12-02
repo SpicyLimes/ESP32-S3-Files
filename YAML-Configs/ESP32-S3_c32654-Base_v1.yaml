@@ -265,4 +265,4 @@ packages:
    url: https://github.com/SpicyLimes/ESP32-S3-Files
    files: YAML-Configs/ESP32-S3_c32654-Package_v1.yaml
    ref: main
-   refresh: 5min
+   refresh: 0s
