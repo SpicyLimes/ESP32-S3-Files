@@ -1,0 +1,235 @@
+# [ ==== ESP Home Info ==== ] #
+esphome:
+  name: "esphome-web-c1e054"
+  friendly_name: ESPHome ArcadePad S3
+  min_version: 2025.9.0
+  name_add_mac_suffix: false
+
+# [ ==== PCB Board Info ==== ] #
+esp32:
+  variant: esp32s3
+  framework:
+    type: esp-idf
+
+# [ ==== Logging, API, and Updates ==== ] #
+logger:
+api:
+ota:
+  - platform: esphome
+
+# [ ==== WiFi Info ==== ] #
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  fast_connect: true
+  on_connect:
+    then:
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 50%
+#          red: 0%
+#          green: 50%
+#          blue: 50%
+#      - delay: 10s
+#      - light.turn_off:
+#          id: rgb_led
+  on_disconnect:
+    then:
+      - light.turn_on:
+          id: rgb_led
+          effect: pulse
+          red: 100%
+          green: 0%
+          blue: 0%
+          brightness: 100%
+
+# [ ==== Web Server Info ==== ] #
+web_server:
+  port: 80
+  version: 3
+
+# [ ==== Time Configuration ==== ] #
+time:
+  - platform: homeassistant
+    id: ha_time
+    timezone: "America/Chicago"
+    on_time:
+      - seconds: 0
+        minutes: 0
+        hours: 0
+        then:
+          - lambda: |-
+              id(arcadepad_s3_key_1_count) = 0;
+              id(arcadepad_s3_key_2_count) = 0;
+              id(arcadepad_s3_key_3_count) = 0;
+              id(arcadepad_s3_key_4_count) = 0;
+              id(arcadepad_s3_key_5_count) = 0;
+              id(arcadepad_s3_key_6_count) = 0;
+              id(arcadepad_s3_key_7_count) = 0;
+              id(arcadepad_s3_key_1_presses_today).publish_state(0);
+              id(arcadepad_s3_key_2_presses_today).publish_state(0);
+              id(arcadepad_s3_key_3_presses_today).publish_state(0);
+              id(arcadepad_s3_key_4_presses_today).publish_state(0);
+              id(arcadepad_s3_key_5_presses_today).publish_state(0);
+              id(arcadepad_s3_key_6_presses_today).publish_state(0);
+              id(arcadepad_s3_key_7_presses_today).publish_state(0);
+
+# [ ==== Button Press Tracking ==== ] #
+globals:
+  - id: arcadepad_s3_key_1_count
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: arcadepad_s3_key_2_count
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: arcadepad_s3_key_3_count
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: arcadepad_s3_key_4_count
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: arcadepad_s3_key_5_count
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: arcadepad_s3_key_6_count
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: arcadepad_s3_key_7_count
+    type: int
+    restore_value: no
+    initial_value: '0'
+
+# [ ==== Buttons ==== ] #
+button:
+  - platform: factory_reset
+    name: "ArcadePad S3 Factory Reset"
+
+# [ ==== Sensors ==== ] #
+sensor:
+  - platform: template
+    name: "ArcadePad S3 Key 1 Presses Today"
+    id: arcadepad_s3_key_1_presses_today
+    icon: mdi:counter
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(arcadepad_s3_key_1_count);'
+  - platform: template
+    name: "ArcadePad S3 Key 2 Presses Today"
+    id: arcadepad_s3_key_2_presses_today
+    icon: mdi:counter
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(arcadepad_s3_key_2_count);'
+  - platform: template
+    name: "ArcadePad S3 Key 3 Presses Today"
+    id: arcadepad_s3_key_3_presses_today
+    icon: mdi:counter
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(arcadepad_s3_key_3_count);'
+  - platform: template
+    name: "ArcadePad S3 Key 4 Presses Today"
+    id: arcadepad_s3_key_4_presses_today
+    icon: mdi:counter
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(arcadepad_s3_key_4_count);'
+  - platform: template
+    name: "ArcadePad S3 Key 5 Presses Today"
+    id: arcadepad_s3_key_5_presses_today
+    icon: mdi:counter
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(arcadepad_s3_key_5_count);'
+  - platform: template
+    name: "ArcadePad S3 Key 6 Presses Today"
+    id: arcadepad_s3_key_6_presses_today
+    icon: mdi:counter
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(arcadepad_s3_key_6_count);'
+  - platform: template
+    name: "ArcadePad S3 Key 7 Presses Today"
+    id: arcadepad_s3_key_7_presses_today
+    icon: mdi:counter
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(arcadepad_s3_key_7_count);'
+
+# [ ==== Text Sensors ==== ] #
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "ArcadePad S3 IP Address"
+      icon: mdi:ip-network
+  - platform: version
+    name: "ESPHome Version"
+    icon: mdi:car-esp
+  - platform: template
+    name: "ArcadePad S3 Key 1 Last Pressed"
+    id: arcadepad_s3_key_1_last_pressed
+    icon: mdi:clock-outline
+    update_interval: never
+  - platform: template
+    name: "ArcadePad S3 Key 2 Last Pressed"
+    id: arcadepad_s3_key_2_last_pressed
+    icon: mdi:clock-outline
+    update_interval: never
+  - platform: template
+    name: "ArcadePad S3 Key 3 Last Pressed"
+    id: arcadepad_s3_key_3_last_pressed
+    icon: mdi:clock-outline
+    update_interval: never
+  - platform: template
+    name: "ArcadePad S3 Key 4 Last Pressed"
+    id: arcadepad_s3_key_4_last_pressed
+    icon: mdi:clock-outline
+    update_interval: never
+  - platform: template
+    name: "ArcadePad S3 Key 5 Last Pressed"
+    id: arcadepad_s3_key_5_last_pressed
+    icon: mdi:clock-outline
+    update_interval: never
+  - platform: template
+    name: "ArcadePad S3 Key 6 Last Pressed"
+    id: arcadepad_s3_key_6_last_pressed
+    icon: mdi:clock-outline
+    update_interval: never
+  - platform: template
+    name: "ArcadePad S3 Key 7 Last Pressed"
+    id: arcadepad_s3_key_7_last_pressed
+    icon: mdi:clock-outline
+    update_interval: never
+
+# [ ==== Addressable RGB LED (NeoPixel/WS2812B) ==== ] #
+light:
+  - platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    pin: GPIO48
+    num_leds: 1
+    chipset: WS2812
+    name: "ArcadePad S3 RGB LED"
+    id: rgb_led
+    restore_mode: RESTORE_DEFAULT_ON
+    default_transition_length: 0.5s
+    icon: mdi:led-on
+    effects:
+      - pulse:
+      - strobe:
+      - flicker:
+      - addressable_rainbow:
+
+# [ ==== External Packages ==== ] #
+packages:
+ remote_package_files:
+   url: https://github.com/SpicyLimes/ESP32-S3-Files
+   files: YAML-Configs/ESP32-S3_c1e054-Package_v1.yaml
+   ref: main
+   refresh: 5min
