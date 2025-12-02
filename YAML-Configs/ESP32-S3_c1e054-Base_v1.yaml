@@ -114,49 +114,49 @@ button:
 # [ ==== Sensors ==== ] #
 sensor:
   - platform: template
-    name: "ArcadePad S3 Key 1 Presses Today"
+    name: "Presses Today - Key 1 - ArcadePad S3"
     id: arcadepad_s3_key_1_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
     lambda: 'return id(arcadepad_s3_key_1_count);'
   - platform: template
-    name: "ArcadePad S3 Key 2 Presses Today"
+    name: "Presses Today - Key 2 - ArcadePad S3"
     id: arcadepad_s3_key_2_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
     lambda: 'return id(arcadepad_s3_key_2_count);'
   - platform: template
-    name: "ArcadePad S3 Key 3 Presses Today"
+    name: "Presses Today - Key 3 - ArcadePad S3"
     id: arcadepad_s3_key_3_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
     lambda: 'return id(arcadepad_s3_key_3_count);'
   - platform: template
-    name: "ArcadePad S3 Key 4 Presses Today"
+    name: "Presses Today - Key 4 - ArcadePad S3"
     id: arcadepad_s3_key_4_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
     lambda: 'return id(arcadepad_s3_key_4_count);'
   - platform: template
-    name: "ArcadePad S3 Key 5 Presses Today"
+    name: "Presses Today - Key 5 - ArcadePad S3"
     id: arcadepad_s3_key_5_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
     lambda: 'return id(arcadepad_s3_key_5_count);'
   - platform: template
-    name: "ArcadePad S3 Key 6 Presses Today"
+    name: "Presses Today - Key 6 - ArcadePad S3"
     id: arcadepad_s3_key_6_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
     update_interval: never
     lambda: 'return id(arcadepad_s3_key_6_count);'
   - platform: template
-    name: "ArcadePad S3 Key 7 Presses Today"
+    name: "Presses Today - Key 7 - ArcadePad S3"
     id: arcadepad_s3_key_7_presses_today
     icon: mdi:counter
     accuracy_decimals: 0
@@ -173,37 +173,37 @@ text_sensor:
     name: "ESPHome Version"
     icon: mdi:car-esp
   - platform: template
-    name: "ArcadePad S3 Key 1 Last Pressed"
+    name: "Last Pressed - Key 1 - ArcadePad S3"
     id: arcadepad_s3_key_1_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "ArcadePad S3 Key 2 Last Pressed"
+    name: "Last Pressed - Key 2 - ArcadePad S3"
     id: arcadepad_s3_key_2_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "ArcadePad S3 Key 3 Last Pressed"
+    name: "Last Pressed - Key 3 - ArcadePad S3"
     id: arcadepad_s3_key_3_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "ArcadePad S3 Key 4 Last Pressed"
+    name: "Last Pressed - Key 4 - ArcadePad S3"
     id: arcadepad_s3_key_4_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "ArcadePad S3 Key 5 Last Pressed"
+    name: "Last Pressed - Key 5 - ArcadePad S3"
     id: arcadepad_s3_key_5_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "ArcadePad S3 Key 6 Last Pressed"
+    name: "Last Pressed - Key 6 - ArcadePad S3"
     id: arcadepad_s3_key_6_last_pressed
     icon: mdi:clock-outline
     update_interval: never
   - platform: template
-    name: "ArcadePad S3 Key 7 Last Pressed"
+    name: "Last Pressed - Key 7 - ArcadePad S3"
     id: arcadepad_s3_key_7_last_pressed
     icon: mdi:clock-outline
     update_interval: never
