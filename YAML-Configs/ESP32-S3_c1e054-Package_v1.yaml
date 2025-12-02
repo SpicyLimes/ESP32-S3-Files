@@ -12,9 +12,9 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "ArcadePad S3 Key 1"
+    name: "Key 1 - ArcadePad S3"
     icon: mdi:gamepad-circle
-    internal: true
+    # internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_1_count) += 1;
@@ -51,9 +51,9 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "ArcadePad S3 Key 2"
+    name: "Key 2 - ArcadePad S3"
     icon: mdi:gamepad-circle-up
-    internal: true
+    # internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_2_count) += 1;
@@ -90,9 +90,9 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "ArcadePad S3 Key 3"
+    name: "Key 3 - ArcadePad S3"
     icon: mdi:gamepad-circle-right
-    internal: true
+    # internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_3_count) += 1;
@@ -129,9 +129,9 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "ArcadePad S3 Key 4"
+    name: "Key 4 - ArcadePad S3"
     icon: mdi:nintendo-game-boy
-    internal: true
+    # internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_4_count) += 1;
@@ -168,9 +168,9 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "ArcadePad S3 Key 5"
+    name: "Key 5 - ArcadePad S3"
     icon: mdi:gamepad-circle-down
-    internal: true
+    # internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_5_count) += 1;
@@ -207,9 +207,9 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "ArcadePad S3 Key 6"
+    name: "Key 6 - ArcadePad S3"
     icon: mdi:gamepad-circle-left
-    internal: true
+    # internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_6_count) += 1;
@@ -246,9 +246,9 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "ArcadePad S3 Key 7"
+    name: "Key 7 - ArcadePad S3"
     icon: mdi:gamepad-circle-outline
-    internal: true
+    # internal: true
     on_press:
       - lambda: |-
           id(arcadepad_s3_key_7_count) += 1;
@@ -276,15 +276,15 @@ binary_sensor:
           id: rgb_led
           effect: rainbow
           brightness: 100%
-
-# ESP32 Boot Button
-#  - platform: gpio
-#    pin:
-#      number: GPIO0
-#      ignore_strapping_warning: true
-#      inverted: true
-#      mode:
-#        input: true
-#        pullup: true
-#    name: "ArcadePad S3 Boot Button"
-#    icon: mdi:gesture-tap-button
+  
+  # ESP32 Boot Button
+  - platform: gpio
+    pin:
+      number: GPIO0
+      ignore_strapping_warning: true
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    name: "Boot Button - ArcadePad S3"
+    icon: mdi:gesture-tap-button
