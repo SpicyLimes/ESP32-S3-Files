@@ -110,6 +110,7 @@ globals:
 button:
   - platform: factory_reset
     name: "Factory Reset - ArcadePad S3"
+    icon: mdi:restart
 
 # [ ==== Sensors ==== ] #
 sensor:
