@@ -48,6 +48,7 @@ binary_sensor:
         input: true
         pullup: true
     name: "ArcadePad S3 Boot Button"
+    icon: mdi:gesture-tap-button
   - platform: matrix_keypad
     keypad_id: arcadepad_s3_keypad
     id: arcadepad_s3_key_1
