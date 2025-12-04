@@ -71,8 +71,8 @@ binary_sensor:
           blue: 0%
           brightness: 100%
           effect: "none"
-      - homeassistant.service:
-          service: light.toggle
+      - homeassistant.action:
+          action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
       - delay: 10s
@@ -104,8 +104,8 @@ binary_sensor:
           blue: 0%
           brightness: 100%
           effect: "none"
-      - homeassistant.service:
-          service: light.toggle
+      - homeassistant.action:
+          action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
       - delay: 10s
@@ -137,8 +137,8 @@ binary_sensor:
           blue: 0%
           brightness: 100%
           effect: "none"
-      - homeassistant.service:
-          service: light.toggle
+      - homeassistant.action:
+          action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
       - delay: 10s
@@ -170,8 +170,8 @@ binary_sensor:
           blue: 0%
           brightness: 100%
           effect: "none"
-      - homeassistant.service:
-          service: light.toggle
+      - homeassistant.action:
+          action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
       - delay: 10s
@@ -203,8 +203,8 @@ binary_sensor:
           blue: 100%
           brightness: 100%
           effect: "none"
-      - homeassistant.service:
-          service: light.toggle
+      - homeassistant.action:
+          action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
       - delay: 10s
@@ -236,8 +236,8 @@ binary_sensor:
           blue: 100%
           brightness: 100%
           effect: "none"
-      - homeassistant.service:
-          service: light.toggle
+      - homeassistant.action:
+          action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
       - delay: 10s
@@ -269,8 +269,8 @@ binary_sensor:
           blue: 100%
           brightness: 100%
           effect: "none"
-      - homeassistant.service:
-          service: light.toggle
+      - homeassistant.action:
+          action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
       - delay: 10s
@@ -302,8 +302,8 @@ binary_sensor:
           blue: 50%
           brightness: 100%
           effect: "none"
-      - homeassistant.service:
-          service: light.toggle
+      - homeassistant.action:
+          action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
       - delay: 10s
@@ -335,8 +335,8 @@ binary_sensor:
           blue: 100%
           brightness: 100%
           effect: "none"
-      - homeassistant.service:
-          service: light.toggle
+      - homeassistant.action:
+          action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
       - delay: 10s
