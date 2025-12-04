@@ -72,7 +72,7 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce
+          service: assist_satellite.announce # <-- CORRECTED
           data:
             message: "Button 1 Pressed"
             preannounce: "false"
@@ -108,7 +108,7 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce
+          service: assist_satellite.announce # <-- CORRECTED
           data:
             message: "Button 2 Pressed"
             preannounce: "false"
@@ -144,7 +144,7 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce
+          service: assist_satellite.announce # <-- CORRECTED
           data:
             message: "Button 3 Pressed"
             preannounce: "false"
@@ -180,7 +180,7 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce
+          service: assist_satellite.announce # <-- CORRECTED
           data:
             message: "Button 4 Pressed"
             preannounce: "false"
@@ -216,7 +216,7 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce
+          service: assist_satellite.announce # <-- CORRECTED
           data:
             message: "Button 5 Pressed"
             preannounce: "false"
@@ -252,7 +252,7 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce
+          service: assist_satellite.announce # <-- CORRECTED
           data:
             message: "Button 6 Pressed"
             preannounce: "false"
@@ -288,7 +288,7 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce
+          service: assist_satellite.announce # <-- CORRECTED
           data:
             message: "Button 7 Pressed"
             preannounce: "false"
@@ -324,7 +324,7 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce
+          service: assist_satellite.announce # <-- CORRECTED
           data:
             message: "Button 8 Pressed"
             preannounce: "false"
@@ -360,7 +360,7 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce
+          service: assist_satellite.announce # <-- CORRECTED
           data:
             message: "Button 9 Pressed"
             preannounce: "false"
