@@ -12,7 +12,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Key 1 - ArcadePad S3"
+    name: "Office Lights - Key 1 - ArcadePad S3"
     icon: mdi:gamepad-circle
     # internal: true
     on_press:
@@ -34,9 +34,9 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: script.turn_on
           data:
-            entity_id: light.bathroom_lights_switch
+            entity_id: script.office_lights_on
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -51,7 +51,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Key 2 - ArcadePad S3"
+    name: "Miami Vice Lights - Key 2 - ArcadePad S3"
     icon: mdi:gamepad-circle-up
     # internal: true
     on_press:
@@ -73,9 +73,9 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: script.turn_on
           data:
-            entity_id: light.bathroom_lights_switch
+            entity_id: script.office_miami_vice_lights
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -90,7 +90,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Key 3 - ArcadePad S3"
+    name: "Bathroom Lights - Key 3 - ArcadePad S3"
     icon: mdi:gamepad-circle-right
     # internal: true
     on_press:
@@ -129,7 +129,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Key 4 - ArcadePad S3"
+    name: "Desk Devices - Key 4 - ArcadePad S3"
     icon: mdi:nintendo-game-boy
     # internal: true
     on_press:
@@ -151,9 +151,9 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: switch.toggle
           data:
-            entity_id: light.bathroom_lights_switch
+            entity_id: switch.desk_devices
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -168,7 +168,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Key 5 - ArcadePad S3"
+    name: "Workbench Light - Key 5 - ArcadePad S3"
     icon: mdi:gamepad-circle-down
     # internal: true
     on_press:
@@ -192,7 +192,7 @@ binary_sensor:
       - homeassistant.action:
           action: light.toggle
           data:
-            entity_id: light.bathroom_lights_switch
+            entity_id: light.workbench_power_strip_10_workbench_leds
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -207,7 +207,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Key 6 - ArcadePad S3"
+    name: "Replicator A1 Mini - Key 6 - ArcadePad S3"
     icon: mdi:gamepad-circle-left
     # internal: true
     on_press:
@@ -229,9 +229,9 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: switch.toggle
           data:
-            entity_id: light.bathroom_lights_switch
+            entity_id: switch.3d_printer_cart_power
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -246,7 +246,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Key 7 - ArcadePad S3"
+    name: "Replicator Intercooler - Key 7 - ArcadePad S3"
     icon: mdi:gamepad-circle-outline
     # internal: true
     on_press:
@@ -268,9 +268,9 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: switch.toggle
           data:
-            entity_id: light.bathroom_lights_switch
+            entity_id: switch.workbench_power_strip_replicator_intercooler
       - delay: 10s
       - light.turn_on:
           id: rgb_led
