@@ -1,6 +1,6 @@
 # [ ==== ESP Home Info ==== ] #
 esphome:
-  name: esphome-web-c32654
+  name: esphome-web-c32654 # Version 1
   friendly_name: ESPHome MacroPad S3
   min_version: 2025.9.0
   name_add_mac_suffix: false
