@@ -75,6 +75,14 @@ binary_sensor:
           action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
+      - homeassistant.action:
+          action: assist_satellite.announce
+          metadata: {}
+          data:
+            message: "Button 1"
+            preannounce: "false"
+          target:
+            entity_id: assist_satellite.hp_server_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -108,6 +116,14 @@ binary_sensor:
           action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
+      - homeassistant.action:
+          action: assist_satellite.announce
+          metadata: {}
+          data:
+            message: "Button 2"
+            preannounce: "false"
+          target:
+            entity_id: assist_satellite.hp_server_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -141,6 +157,14 @@ binary_sensor:
           action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
+      - homeassistant.action:
+          action: assist_satellite.announce
+          metadata: {}
+          data:
+            message: "Button 3"
+            preannounce: "false"
+          target:
+            entity_id: assist_satellite.hp_server_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -174,6 +198,14 @@ binary_sensor:
           action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
+      - homeassistant.action:
+          action: assist_satellite.announce
+          metadata: {}
+          data:
+            message: "Button 4"
+            preannounce: "false"
+          target:
+            entity_id: assist_satellite.hp_server_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -207,6 +239,14 @@ binary_sensor:
           action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
+      - homeassistant.action:
+          action: assist_satellite.announce
+          metadata: {}
+          data:
+            message: "Button 5"
+            preannounce: "false"
+          target:
+            entity_id: assist_satellite.hp_server_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -240,6 +280,14 @@ binary_sensor:
           action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
+      - homeassistant.action:
+          action: assist_satellite.announce
+          metadata: {}
+          data:
+            message: "Button 6"
+            preannounce: "false"
+          target:
+            entity_id: assist_satellite.hp_server_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -273,6 +321,14 @@ binary_sensor:
           action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
+      - homeassistant.action:
+          action: assist_satellite.announce
+          metadata: {}
+          data:
+            message: "Button 7"
+            preannounce: "false"
+          target:
+            entity_id: assist_satellite.hp_server_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -306,6 +362,14 @@ binary_sensor:
           action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
+      - homeassistant.action:
+          action: assist_satellite.announce
+          metadata: {}
+          data:
+            message: "Button 8"
+            preannounce: "false"
+          target:
+            entity_id: assist_satellite.hp_server_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -339,6 +403,14 @@ binary_sensor:
           action: light.toggle
           data:
             entity_id: light.bathroom_lights_switch
+      - homeassistant.action:
+          action: assist_satellite.announce
+          metadata: {}
+          data:
+            message: "Button 9"
+            preannounce: "false"
+          target:
+            entity_id: assist_satellite.hp_server_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
