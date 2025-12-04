@@ -6,30 +6,30 @@
 matrix_keypad:
   id: macropad_s3_keypad
   rows:
-    - pin: 
+    - pin:
         number: GPIO8    # Row 1
         mode:
           output: true
-    - pin: 
+    - pin:
         number: GPIO9    # Row 2
         mode:
           output: true
-    - pin: 
+    - pin:
         number: GPIO10   # Row 3
         mode:
           output: true
   columns:
-    - pin: 
+    - pin:
         number: GPIO11   # Column 1
         mode:
           input: true
           pullup: true
-    - pin: 
+    - pin:
         number: GPIO12   # Column 2
         mode:
           input: true
           pullup: true
-    - pin: 
+    - pin:
         number: GPIO13   # Column 3
         mode:
           input: true
@@ -57,10 +57,10 @@ binary_sensor:
       - lambda: |-
           id(macropad_s3_key_1_count) += 1;
           id(macropad_s3_key_1_presses_today).publish_state(id(macropad_s3_key_1_count));
-          
+
           auto time = id(ha_time).now();
           char timestamp[64];
-          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d",
                     time.month, time.day_of_month, time.year,
                     time.hour, time.minute, time.second);
           id(macropad_s3_key_1_last_pressed).publish_state(timestamp);
@@ -72,14 +72,19 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: assist_satellite.announce
           data:
-            entity_id: light.bathroom_lights_switch
+            message: "Button 1 Pressed"
+            preannounce: false
+          target:
+            device_id:
+              - b65eff67091c4f6ea0bd1348a7dd29c4
+              - cce719c51cd2fb0925112a3a7883c1b4
       - delay: 10s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -90,10 +95,10 @@ binary_sensor:
       - lambda: |-
           id(macropad_s3_key_2_count) += 1;
           id(macropad_s3_key_2_presses_today).publish_state(id(macropad_s3_key_2_count));
-          
+
           auto time = id(ha_time).now();
           char timestamp[64];
-          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d",
                     time.month, time.day_of_month, time.year,
                     time.hour, time.minute, time.second);
           id(macropad_s3_key_2_last_pressed).publish_state(timestamp);
@@ -105,14 +110,19 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: assist_satellite.announce
           data:
-            entity_id: light.bathroom_lights_switch
+            message: "Button 2 Pressed"
+            preannounce: false
+          target:
+            device_id:
+              - b65eff67091c4f6ea0bd1348a7dd29c4
+              - cce719c51cd2fb0925112a3a7883c1b4
       - delay: 10s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -123,10 +133,10 @@ binary_sensor:
       - lambda: |-
           id(macropad_s3_key_3_count) += 1;
           id(macropad_s3_key_3_presses_today).publish_state(id(macropad_s3_key_3_count));
-          
+
           auto time = id(ha_time).now();
           char timestamp[64];
-          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d",
                     time.month, time.day_of_month, time.year,
                     time.hour, time.minute, time.second);
           id(macropad_s3_key_3_last_pressed).publish_state(timestamp);
@@ -138,14 +148,19 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: assist_satellite.announce
           data:
-            entity_id: light.bathroom_lights_switch
+            message: "Button 3 Pressed"
+            preannounce: false
+          target:
+            device_id:
+              - b65eff67091c4f6ea0bd1348a7dd29c4
+              - cce719c51cd2fb0925112a3a7883c1b4
       - delay: 10s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -156,10 +171,10 @@ binary_sensor:
       - lambda: |-
           id(macropad_s3_key_4_count) += 1;
           id(macropad_s3_key_4_presses_today).publish_state(id(macropad_s3_key_4_count));
-          
+
           auto time = id(ha_time).now();
           char timestamp[64];
-          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d",
                     time.month, time.day_of_month, time.year,
                     time.hour, time.minute, time.second);
           id(macropad_s3_key_4_last_pressed).publish_state(timestamp);
@@ -171,14 +186,19 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: assist_satellite.announce
           data:
-            entity_id: light.bathroom_lights_switch
+            message: "Button 4 Pressed"
+            preannounce: false
+          target:
+            device_id:
+              - b65eff67091c4f6ea0bd1348a7dd29c4
+              - cce719c51cd2fb0925112a3a7883c1b4
       - delay: 10s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -189,10 +209,10 @@ binary_sensor:
       - lambda: |-
           id(macropad_s3_key_5_count) += 1;
           id(macropad_s3_key_5_presses_today).publish_state(id(macropad_s3_key_5_count));
-          
+
           auto time = id(ha_time).now();
           char timestamp[64];
-          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d",
                     time.month, time.day_of_month, time.year,
                     time.hour, time.minute, time.second);
           id(macropad_s3_key_5_last_pressed).publish_state(timestamp);
@@ -204,14 +224,19 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: assist_satellite.announce
           data:
-            entity_id: light.bathroom_lights_switch
+            message: "Button 5 Pressed"
+            preannounce: false
+          target:
+            device_id:
+              - b65eff67091c4f6ea0bd1348a7dd29c4
+              - cce719c51cd2fb0925112a3a7883c1b4
       - delay: 10s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -222,10 +247,10 @@ binary_sensor:
       - lambda: |-
           id(macropad_s3_key_6_count) += 1;
           id(macropad_s3_key_6_presses_today).publish_state(id(macropad_s3_key_6_count));
-          
+
           auto time = id(ha_time).now();
           char timestamp[64];
-          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d",
                     time.month, time.day_of_month, time.year,
                     time.hour, time.minute, time.second);
           id(macropad_s3_key_6_last_pressed).publish_state(timestamp);
@@ -237,14 +262,19 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: assist_satellite.announce
           data:
-            entity_id: light.bathroom_lights_switch
+            message: "Button 6 Pressed"
+            preannounce: false
+          target:
+            device_id:
+              - b65eff67091c4f6ea0bd1348a7dd29c4
+              - cce719c51cd2fb0925112a3a7883c1b4
       - delay: 10s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -255,10 +285,10 @@ binary_sensor:
       - lambda: |-
           id(macropad_s3_key_7_count) += 1;
           id(macropad_s3_key_7_presses_today).publish_state(id(macropad_s3_key_7_count));
-          
+
           auto time = id(ha_time).now();
           char timestamp[64];
-          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d",
                     time.month, time.day_of_month, time.year,
                     time.hour, time.minute, time.second);
           id(macropad_s3_key_7_last_pressed).publish_state(timestamp);
@@ -270,14 +300,19 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: assist_satellite.announce
           data:
-            entity_id: light.bathroom_lights_switch
+            message: "Button 7 Pressed"
+            preannounce: false
+          target:
+            device_id:
+              - b65eff67091c4f6ea0bd1348a7dd29c4
+              - cce719c51cd2fb0925112a3a7883c1b4
       - delay: 10s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -288,10 +323,10 @@ binary_sensor:
       - lambda: |-
           id(macropad_s3_key_8_count) += 1;
           id(macropad_s3_key_8_presses_today).publish_state(id(macropad_s3_key_8_count));
-          
+
           auto time = id(ha_time).now();
           char timestamp[64];
-          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d",
                     time.month, time.day_of_month, time.year,
                     time.hour, time.minute, time.second);
           id(macropad_s3_key_8_last_pressed).publish_state(timestamp);
@@ -303,14 +338,19 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: assist_satellite.announce
           data:
-            entity_id: light.bathroom_lights_switch
+            message: "Button 8 Pressed"
+            preannounce: false
+          target:
+            device_id:
+              - b65eff67091c4f6ea0bd1348a7dd29c4
+              - cce719c51cd2fb0925112a3a7883c1b4
       - delay: 10s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -321,10 +361,10 @@ binary_sensor:
       - lambda: |-
           id(macropad_s3_key_9_count) += 1;
           id(macropad_s3_key_9_presses_today).publish_state(id(macropad_s3_key_9_count));
-          
+
           auto time = id(ha_time).now();
           char timestamp[64];
-          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d", 
+          snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%04d %02d:%02d:%02d",
                     time.month, time.day_of_month, time.year,
                     time.hour, time.minute, time.second);
           id(macropad_s3_key_9_last_pressed).publish_state(timestamp);
@@ -336,11 +376,16 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: light.toggle
+          action: assist_satellite.announce
           data:
-            entity_id: light.bathroom_lights_switch
+            message: "Button 9 Pressed"
+            preannounce: false
+          target:
+            device_id:
+              - b65eff67091c4f6ea0bd1348a7dd29c4
+              - cce719c51cd2fb0925112a3a7883c1b4
       - delay: 10s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
-          brightness: 50%
+          brightness: 100%
