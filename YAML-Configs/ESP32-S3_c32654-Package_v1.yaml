@@ -75,7 +75,7 @@ binary_sensor:
           action: assist_satellite.announce
           data:
             message: "Button 1 Pressed"
-            preannounce: false
+            preannounce: "false"
           target:
             device_id:
               - b65eff67091c4f6ea0bd1348a7dd29c4
@@ -113,7 +113,7 @@ binary_sensor:
           action: assist_satellite.announce
           data:
             message: "Button 2 Pressed"
-            preannounce: false
+            preannounce: "false"
           target:
             device_id:
               - b65eff67091c4f6ea0bd1348a7dd29c4
@@ -151,7 +151,7 @@ binary_sensor:
           action: assist_satellite.announce
           data:
             message: "Button 3 Pressed"
-            preannounce: false
+            preannounce: "false"
           target:
             device_id:
               - b65eff67091c4f6ea0bd1348a7dd29c4
@@ -189,7 +189,7 @@ binary_sensor:
           action: assist_satellite.announce
           data:
             message: "Button 4 Pressed"
-            preannounce: false
+            preannounce: "false"
           target:
             device_id:
               - b65eff67091c4f6ea0bd1348a7dd29c4
@@ -227,7 +227,7 @@ binary_sensor:
           action: assist_satellite.announce
           data:
             message: "Button 5 Pressed"
-            preannounce: false
+            preannounce: "false"
           target:
             device_id:
               - b65eff67091c4f6ea0bd1348a7dd29c4
@@ -265,7 +265,7 @@ binary_sensor:
           action: assist_satellite.announce
           data:
             message: "Button 6 Pressed"
-            preannounce: false
+            preannounce: "false"
           target:
             device_id:
               - b65eff67091c4f6ea0bd1348a7dd29c4
@@ -303,7 +303,7 @@ binary_sensor:
           action: assist_satellite.announce
           data:
             message: "Button 7 Pressed"
-            preannounce: false
+            preannounce: "false"
           target:
             device_id:
               - b65eff67091c4f6ea0bd1348a7dd29c4
@@ -341,7 +341,7 @@ binary_sensor:
           action: assist_satellite.announce
           data:
             message: "Button 8 Pressed"
-            preannounce: false
+            preannounce: "false"
           target:
             device_id:
               - b65eff67091c4f6ea0bd1348a7dd29c4
@@ -379,7 +379,7 @@ binary_sensor:
           action: assist_satellite.announce
           data:
             message: "Button 9 Pressed"
-            preannounce: false
+            preannounce: "false"
           target:
             device_id:
               - b65eff67091c4f6ea0bd1348a7dd29c4
