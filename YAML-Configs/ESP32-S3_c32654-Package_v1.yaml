@@ -77,7 +77,6 @@ binary_sensor:
             entity_id: light.bathroom_lights_switch
       - homeassistant.action:
           action: assist_satellite.announce
-          metadata: {}
           data:
             message: "Button 1"
             preannounce: "false"
@@ -117,7 +116,6 @@ binary_sensor:
             entity_id: light.bathroom_lights_switch
       - homeassistant.action:
           action: assist_satellite.announce
-          metadata: {}
           data:
             message: "Button 2"
             preannounce: "false"
@@ -157,7 +155,6 @@ binary_sensor:
             entity_id: light.bathroom_lights_switch
       - homeassistant.action:
           action: assist_satellite.announce
-          metadata: {}
           data:
             message: "Button 3"
             preannounce: "false"
@@ -197,7 +194,6 @@ binary_sensor:
             entity_id: light.bathroom_lights_switch
       - homeassistant.action:
           action: assist_satellite.announce
-          metadata: {}
           data:
             message: "Button 4"
             preannounce: "false"
@@ -237,7 +233,6 @@ binary_sensor:
             entity_id: light.bathroom_lights_switch
       - homeassistant.action:
           action: assist_satellite.announce
-          metadata: {}
           data:
             message: "Button 5"
             preannounce: "false"
@@ -277,7 +272,6 @@ binary_sensor:
             entity_id: light.bathroom_lights_switch
       - homeassistant.action:
           action: assist_satellite.announce
-          metadata: {}
           data:
             message: "Button 6"
             preannounce: "false"
@@ -317,7 +311,6 @@ binary_sensor:
             entity_id: light.bathroom_lights_switch
       - homeassistant.action:
           action: assist_satellite.announce
-          metadata: {}
           data:
             message: "Button 7"
             preannounce: "false"
@@ -357,7 +350,6 @@ binary_sensor:
             entity_id: light.bathroom_lights_switch
       - homeassistant.action:
           action: assist_satellite.announce
-          metadata: {}
           data:
             message: "Button 8"
             preannounce: "false"
@@ -397,7 +389,6 @@ binary_sensor:
             entity_id: light.bathroom_lights_switch
       - homeassistant.action:
           action: assist_satellite.announce
-          metadata: {}
           data:
             message: "Button 9"
             preannounce: "false"
