@@ -1,0 +1,439 @@
+# ESPHome MacroPad S3
+# esphome-web-c32654
+# File Description: External Package
+
+# [ ==== Time Info ==== ] #
+time:
+  - platform: homeassistant
+    id: ha_time
+    timezone: "America/Chicago"
+    on_time:
+      - seconds: 0
+        minutes: 0
+        hours: 0
+        then:
+          - script.execute: reset_daily_press_counts
+
+# [ ==== Matrix Keypad Configuration ==== ]
+matrix_keypad:
+  id: macropad_s3_keypad
+  rows:
+    - pin:
+        number: GPIO8
+        mode: { output: true }
+    - pin:
+        number: GPIO9
+        mode: { output: true }
+    - pin:
+        number: GPIO10
+        mode: { output: true }
+  columns:
+    - pin:
+        number: GPIO11
+        mode: { input: true, pullup: true }
+    - pin:
+        number: GPIO12
+        mode: { input: true, pullup: true }
+    - pin:
+        number: GPIO13
+        mode: { input: true, pullup: true }
+  keys: "123456789"
+  has_diodes: false
+
+# [ ==== Binary Sensors (Refactored) ==== ]
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      ignore_strapping_warning: true
+      inverted: true
+      mode: { input: true, pullup: true }
+    name: "Boot Button - MacroPad S3"
+    icon: mdi:gesture-tap-button
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_1_macropad_s3
+    key: "1"
+    name: "Key 1 - MacroPad S3"
+    on_press:
+      - script.execute: run_key1_action
+      - script.execute:
+          id: handle_keypress
+          key_number: 1
+          message: "Button 1 Pressed"
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_2_macropad_s3
+    key: "2"
+    name: "Key 2 - MacroPad S3"
+    on_press:
+      - script.execute: run_key2_action
+      - script.execute:
+          id: handle_keypress
+          key_number: 2
+          message: "Button 2 Pressed"
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_3_macropad_s3
+    key: "3"
+    name: "Key 3 - MacroPad S3"
+    on_press:
+      - script.execute: run_key3_action
+      - script.execute:
+          id: handle_keypress
+          key_number: 3
+          message: "Button 3 Pressed"
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_4_macropad_s3
+    key: "4"
+    name: "Key 4 - MacroPad S3"
+    on_press:
+      - script.execute: run_key4_action
+      - script.execute:
+          id: handle_keypress
+          key_number: 4
+          message: "Button 4 Pressed"
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_5_macropad_s3
+    key: "5"
+    name: "Key 5 - MacroPad S3"
+    on_press:
+      - script.execute: run_key5_action
+      - script.execute:
+          id: handle_keypress
+          key_number: 5
+          message: "Button 5 Pressed"
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_6_macropad_s3
+    key: "6"
+    name: "Key 6 - MacroPad S3"
+    on_press:
+      - script.execute: run_key6_action
+      - script.execute:
+          id: handle_keypress
+          key_number: 6
+          message: "Button 6 Pressed"
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_7_macropad_s3
+    key: "7"
+    name: "Key 7 - MacroPad S3"
+    on_press:
+      - script.execute: run_key7_action
+      - script.execute:
+          id: handle_keypress
+          key_number: 7
+          message: "Button 7 Pressed"
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_8_macropad_s3
+    key: "8"
+    name: "Key 8 - MacroPad S3"
+    on_press:
+      - script.execute: run_key8_action
+      - script.execute:
+          id: handle_keypress
+          key_number: 8
+          message: "Button 8 Pressed"
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_9_macropad_s3
+    key: "9"
+    name: "Key 9 - MacroPad S3"
+    on_press:
+      - script.execute: run_key9_action
+      - script.execute:
+          id: handle_keypress
+          key_number: 9
+          message: "Button 9 Pressed"
+
+# [ ==== Globals Info ==== ] #
+globals:
+  - id: count_key_1_macropad_s3
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: count_key_2_macropad_s3
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: count_key_3_macropad_s3
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: count_key_4_macropad_s3
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: count_key_5_macropad_s3
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: count_key_6_macropad_s3
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: count_key_7_macropad_s3
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: count_key_8_macropad_s3
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: count_key_9_macropad_s3
+    type: int
+    restore_value: no
+    initial_value: '0'
+
+# [ ==== Sensor Info ==== ] #
+sensor:
+  - platform: template
+    name: "Presses Today - Key 1 - MacroPad S3"
+    id: presses_today_key_1_macropad_s3
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(count_key_1_macropad_s3);'
+  - platform: template
+    name: "Presses Today - Key 2 - MacroPad S3"
+    id: presses_today_key_2_macropad_s3
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(count_key_2_macropad_s3);'
+  - platform: template
+    name: "Presses Today - Key 3 - MacroPad S3"
+    id: presses_today_key_3_macropad_s3
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(count_key_3_macropad_s3);'
+  - platform: template
+    name: "Presses Today - Key 4 - MacroPad S3"
+    id: presses_today_key_4_macropad_s3
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(count_key_4_macropad_s3);'
+  - platform: template
+    name: "Presses Today - Key 5 - MacroPad S3"
+    id: presses_today_key_5_macropad_s3
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(count_key_5_macropad_s3);'
+  - platform: template
+    name: "Presses Today - Key 6 - MacroPad S3"
+    id: presses_today_key_6_macropad_s3
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(count_key_6_macropad_s3);'
+  - platform: template
+    name: "Presses Today - Key 7 - MacroPad S3"
+    id: presses_today_key_7_macropad_s3
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(count_key_7_macropad_s3);'
+  - platform: template
+    name: "Presses Today - Key 8 - MacroPad S3"
+    id: presses_today_key_8_macropad_s3
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(count_key_8_macropad_s3);'
+  - platform: template
+    name: "Presses Today - Key 9 - MacroPad S3"
+    id: presses_today_key_9_macropad_s3
+    accuracy_decimals: 0
+    update_interval: never
+    lambda: 'return id(count_key_9_macropad_s3);'
+
+# [ ==== Text Sensor Info ==== ] #
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "IP Address - MacroPad S3"
+      icon: mdi:ip-network
+  - platform: version
+    name: "ESPHome Version - MacroPad S3"
+    icon: mdi:car-esp
+  - platform: template
+    name: "Last Pressed - Key 1 - MacroPad S3"
+    id: last_pressed_key_1_macropad_s3
+    update_interval: never
+  - platform: template
+    name: "Last Pressed - Key 2 - MacroPad S3"
+    id: last_pressed_key_2_macropad_s3
+    update_interval: never
+  - platform: template
+    name: "Last Pressed - Key 3 - MacroPad S3"
+    id: last_pressed_key_3_macropad_s3
+    update_interval: never
+  - platform: template
+    name: "Last Pressed - Key 4 - MacroPad S3"
+    id: last_pressed_key_4_macropad_s3
+    update_interval: never
+  - platform: template
+    name: "Last Pressed - Key 5 - MacroPad S3"
+    id: last_pressed_key_5_macropad_s3
+    update_interval: never
+  - platform: template
+    name: "Last Pressed - Key 6 - MacroPad S3"
+    id: last_pressed_key_6_macropad_s3
+    update_interval: never
+  - platform: template
+    name: "Last Pressed - Key 7 - MacroPad S3"
+    id: last_pressed_key_7_macropad_s3
+    update_interval: never
+  - platform: template
+    name: "Last Pressed - Key 8 - MacroPad S3"
+    id: last_pressed_key_8_macropad_s3
+    update_interval: never
+  - platform: template
+    name: "Last Pressed - Key 9 - MacroPad S3"
+    id: last_pressed_key_9_macropad_s3
+    update_interval: never
+
+# [ ==== Script Info ==== ] #
+script:
+  - id: reset_daily_press_counts
+    mode: queued
+    then:
+      # Reset all counters
+      - lambda: |-
+          id(count_key_1_macropad_s3) = 0;
+          id(count_key_2_macropad_s3) = 0;
+          id(count_key_3_macropad_s3) = 0;
+          id(count_key_4_macropad_s3) = 0;
+          id(count_key_5_macropad_s3) = 0;
+          id(count_key_6_macropad_s3) = 0;
+          id(count_key_7_macropad_s3) = 0;
+          id(count_key_8_macropad_s3) = 0;
+          id(count_key_9_macropad_s3) = 0;
+      # Reset template sensor states
+      - lambda: |-
+          id(presses_today_key_1_macropad_s3).publish_state(0);
+          id(presses_today_key_2_macropad_s3).publish_state(0);
+          id(presses_today_key_3_macropad_s3).publish_state(0);
+          id(presses_today_key_4_macropad_s3).publish_state(0);
+          id(presses_today_key_5_macropad_s3).publish_state(0);
+          id(presses_today_key_6_macropad_s3).publish_state(0);
+          id(presses_today_key_7_macropad_s3).publish_state(0);
+          id(presses_today_key_8_macropad_s3).publish_state(0);
+          id(presses_today_key_9_macropad_s3).publish_state(0);
+
+  - id: handle_keypress
+    mode: queued
+    parameters:
+      key_number: int
+      message: string
+    then:
+      # Increment counters
+      - lambda: |-
+          int k = key_number;
+          switch(k) {
+            case 1: id(count_key_1_macropad_s3)++; break;
+            case 2: id(count_key_2_macropad_s3)++; break;
+            case 3: id(count_key_3_macropad_s3)++; break;
+            case 4: id(count_key_4_macropad_s3)++; break;
+            case 5: id(count_key_5_macropad_s3)++; break;
+            case 6: id(count_key_6_macropad_s3)++; break;
+            case 7: id(count_key_7_macropad_s3)++; break;
+            case 8: id(count_key_8_macropad_s3)++; break;
+            case 9: id(count_key_9_macropad_s3)++; break;
+          }
+
+          auto t = id(ha_time).now();
+          char ts[32];
+          snprintf(ts, sizeof(ts), "%02d/%02d/%04d %02d:%02d:%02d",
+            t.month, t.day_of_month, t.year,
+            t.hour, t.minute, t.second);
+
+          switch(k) {
+            case 1: id(last_pressed_key_1_macropad_s3).publish_state(ts); break;
+            case 2: id(last_pressed_key_2_macropad_s3).publish_state(ts); break;
+            case 3: id(last_pressed_key_3_macropad_s3).publish_state(ts); break;
+            case 4: id(last_pressed_key_4_macropad_s3).publish_state(ts); break;
+            case 5: id(last_pressed_key_5_macropad_s3).publish_state(ts); break;
+            case 6: id(last_pressed_key_6_macropad_s3).publish_state(ts); break;
+            case 7: id(last_pressed_key_7_macropad_s3).publish_state(ts); break;
+            case 8: id(last_pressed_key_8_macropad_s3).publish_state(ts); break;
+            case 9: id(last_pressed_key_9_macropad_s3).publish_state(ts); break;
+          }
+
+      - script.execute: set_keypress_led
+
+      - script.execute: reset_led_after_delay
+
+  - id: set_keypress_led
+    mode: parallel
+    then:
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 100%
+          blue: 100%
+          brightness: 100%
+          effect: none
+
+  - id: reset_led_after_delay
+    mode: parallel
+    then:
+      - delay: 5s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 100%
+
+  - id: run_key1_action
+    then:
+      - homeassistant.action:
+          action: ${key_1_action}
+          data:
+            entity_id: ${key_1_entity}
+  - id: run_key2_action
+    then:
+      - homeassistant.action:
+          action: ${key_2_action}
+          data:
+            entity_id: ${key_2_entity}
+  - id: run_key3_action
+    then:
+      - homeassistant.action:
+          action: ${key_3_action}
+          data:
+            entity_id: ${key_3_entity}
+  - id: run_key4_action
+    then:
+      - homeassistant.action:
+          action: ${key_4_action}
+          data:
+            entity_id: ${key_4_entity}
+  - id: run_key5_action
+    then:
+      - homeassistant.action:
+          action: ${key_5_action}
+          data:
+            entity_id: ${key_5_entity}
+  - id: run_key6_action
+    then:
+      - homeassistant.action:
+          action: ${key_6_action}
+          data:
+            entity_id: ${key_6_entity}
+  - id: run_key7_action
+    then:
+      - homeassistant.action:
+          action: ${key_7_action}
+          data:
+            entity_id: ${key_7_entity}
+  - id: run_key8_action
+    then:
+      - homeassistant.action:
+          action: ${key_8_action}
+          data:
+            entity_id: ${key_8_entity}
+  - id: run_key9_action
+    then:
+      - homeassistant.action:
+          action: ${key_9_action}
+          data:
+            entity_id: ${key_9_entity}
