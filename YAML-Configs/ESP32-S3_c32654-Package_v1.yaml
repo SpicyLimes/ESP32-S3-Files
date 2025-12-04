@@ -76,10 +76,7 @@ binary_sensor:
           data:
             message: "Button 1 Pressed"
             preannounce: "false"
-          target:
-            device_id:
-              - b65eff67091c4f6ea0bd1348a7dd29c4
-              - cce719c51cd2fb0925112a3a7883c1b4
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -114,10 +111,7 @@ binary_sensor:
           data:
             message: "Button 2 Pressed"
             preannounce: "false"
-          target:
-            device_id:
-              - b65eff67091c4f6ea0bd1348a7dd29c4
-              - cce719c51cd2fb0925112a3a7883c1b4
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -152,10 +146,7 @@ binary_sensor:
           data:
             message: "Button 3 Pressed"
             preannounce: "false"
-          target:
-            device_id:
-              - b65eff67091c4f6ea0bd1348a7dd29c4
-              - cce719c51cd2fb0925112a3a7883c1b4
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -190,10 +181,7 @@ binary_sensor:
           data:
             message: "Button 4 Pressed"
             preannounce: "false"
-          target:
-            device_id:
-              - b65eff67091c4f6ea0bd1348a7dd29c4
-              - cce719c51cd2fb0925112a3a7883c1b4
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -228,10 +216,7 @@ binary_sensor:
           data:
             message: "Button 5 Pressed"
             preannounce: "false"
-          target:
-            device_id:
-              - b65eff67091c4f6ea0bd1348a7dd29c4
-              - cce719c51cd2fb0925112a3a7883c1b4
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -266,10 +251,7 @@ binary_sensor:
           data:
             message: "Button 6 Pressed"
             preannounce: "false"
-          target:
-            device_id:
-              - b65eff67091c4f6ea0bd1348a7dd29c4
-              - cce719c51cd2fb0925112a3a7883c1b4
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -304,10 +286,7 @@ binary_sensor:
           data:
             message: "Button 7 Pressed"
             preannounce: "false"
-          target:
-            device_id:
-              - b65eff67091c4f6ea0bd1348a7dd29c4
-              - cce719c51cd2fb0925112a3a7883c1b4
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -342,10 +321,7 @@ binary_sensor:
           data:
             message: "Button 8 Pressed"
             preannounce: "false"
-          target:
-            device_id:
-              - b65eff67091c4f6ea0bd1348a7dd29c4
-              - cce719c51cd2fb0925112a3a7883c1b4
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -380,10 +356,7 @@ binary_sensor:
           data:
             message: "Button 9 Pressed"
             preannounce: "false"
-          target:
-            device_id:
-              - b65eff67091c4f6ea0bd1348a7dd29c4
-              - cce719c51cd2fb0925112a3a7883c1b4
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
       - delay: 10s
       - light.turn_on:
           id: rgb_led
