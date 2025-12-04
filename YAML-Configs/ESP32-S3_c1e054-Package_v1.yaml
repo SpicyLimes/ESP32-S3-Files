@@ -12,7 +12,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Office Lights - Key 1 - ArcadePad S3"
+    name: "Key 1 - Office Lights - ArcadePad S3"
     icon: mdi:gamepad-circle
     # internal: true
     on_press:
@@ -51,7 +51,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Miami Vice Lights - Key 2 - ArcadePad S3"
+    name: "Key 2 - Miami Vice Lights - ArcadePad S3"
     icon: mdi:gamepad-circle-up
     # internal: true
     on_press:
@@ -90,7 +90,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Bathroom Lights - Key 3 - ArcadePad S3"
+    name: "Key 3 - Bathroom Lights - ArcadePad S3"
     icon: mdi:gamepad-circle-right
     # internal: true
     on_press:
@@ -129,7 +129,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Desk Devices - Key 4 - ArcadePad S3"
+    name: "Key 4 - Desk Devices - ArcadePad S3"
     icon: mdi:nintendo-game-boy
     # internal: true
     on_press:
@@ -168,7 +168,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Workbench Light - Key 5 - ArcadePad S3"
+    name: "Key 5 - Workbench Light - ArcadePad S3"
     icon: mdi:gamepad-circle-down
     # internal: true
     on_press:
@@ -207,7 +207,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Replicator A1 Mini - Key 6 - ArcadePad S3"
+    name: "Key 6 - Replicator A1 Mini - ArcadePad S3"
     icon: mdi:gamepad-circle-left
     # internal: true
     on_press:
@@ -246,7 +246,7 @@ binary_sensor:
         input: true
         pullup: true
       inverted: true
-    name: "Replicator Intercooler - Key 7 - ArcadePad S3"
+    name: "Key 7 - Replicator Intercooler - ArcadePad S3"
     icon: mdi:gamepad-circle-outline
     # internal: true
     on_press:
