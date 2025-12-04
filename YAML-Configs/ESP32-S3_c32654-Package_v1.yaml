@@ -72,12 +72,11 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce # <-- CORRECTED
+          action: assist_satellite.announce
           data:
             message: "Button 1 Pressed"
             preannounce: "false"
-          target:
-            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite # <-- entity_id moved under data:
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -108,12 +107,11 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce # <-- CORRECTED
+          action: assist_satellite.announce
           data:
             message: "Button 2 Pressed"
             preannounce: "false"
-          target:
-            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite # <-- entity_id moved under data:
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -144,12 +142,11 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce # <-- CORRECTED
+          action: assist_satellite.announce
           data:
             message: "Button 3 Pressed"
             preannounce: "false"
-          target:
-            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite # <-- entity_id moved under data:
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -180,12 +177,11 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce # <-- CORRECTED
+          action: assist_satellite.announce
           data:
             message: "Button 4 Pressed"
             preannounce: "false"
-          target:
-            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite # <-- entity_id moved under data:
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -216,12 +212,11 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce # <-- CORRECTED
+          action: assist_satellite.announce
           data:
             message: "Button 5 Pressed"
             preannounce: "false"
-          target:
-            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite # <-- entity_id moved under data:
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -252,12 +247,11 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce # <-- CORRECTED
+          action: assist_satellite.announce
           data:
             message: "Button 6 Pressed"
             preannounce: "false"
-          target:
-            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite # <-- entity_id moved under data:
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -288,12 +282,11 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce # <-- CORRECTED
+          action: assist_satellite.announce
           data:
             message: "Button 7 Pressed"
             preannounce: "false"
-          target:
-            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite # <-- entity_id moved under data:
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -324,12 +317,11 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce # <-- CORRECTED
+          action: assist_satellite.announce
           data:
             message: "Button 8 Pressed"
             preannounce: "false"
-          target:
-            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite # <-- entity_id moved under data:
       - delay: 10s
       - light.turn_on:
           id: rgb_led
@@ -360,12 +352,11 @@ binary_sensor:
           brightness: 100%
           effect: "none"
       - homeassistant.action:
-          action: assist_satellite.announce # <-- CORRECTED
+          action: assist_satellite.announce
           data:
             message: "Button 9 Pressed"
             preannounce: "false"
-          target:
-            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite
+            entity_id: assist_satellite.home_assistant_voice_09bf3e_assist_satellite # <-- entity_id moved under data:
       - delay: 10s
       - light.turn_on:
           id: rgb_led
