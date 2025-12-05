@@ -1,1 +1,220 @@
-# Text
+# ESPHome MacroPad S3
+# esphome-web-c32654 Version 3
+# File Description: External Package
+
+# [ ==== Time Info ==== ] #
+time:
+  - platform: homeassistant
+    id: ha_time
+    timezone: "America/Chicago"
+
+# [ ==== Matrix Keypad Configuration ==== ]
+matrix_keypad:
+  id: macropad_s3_keypad
+  rows:
+    - pin:
+        number: GPIO8
+        mode: { output: true }
+    - pin:
+        number: GPIO9
+        mode: { output: true }
+    - pin:
+        number: GPIO10
+        mode: { output: true }
+  columns:
+    - pin:
+        number: GPIO11
+        mode: { input: true, pullup: true }
+    - pin:
+        number: GPIO12
+        mode: { input: true, pullup: true }
+    - pin:
+        number: GPIO13
+        mode: { input: true, pullup: true }
+  keys: "123456789"
+  has_diodes: false
+
+# [ ==== Binary Sensors ==== ]
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      ignore_strapping_warning: true
+      inverted: true
+      mode: { input: true, pullup: true }
+    name: "Boot Button - MacroPad S3"
+    icon: mdi:gesture-tap-button
+
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_1_macropad_s3
+    key: "1"
+    name: "Key 1 - MacroPad S3"
+    on_press:
+      - script.execute: run_key1_action
+
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_2_macropad_s3
+    key: "2"
+    name: "Key 2 - MacroPad S3"
+    on_press:
+      - script.execute: run_key2_action
+
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_3_macropad_s3
+    key: "3"
+    name: "Key 3 - MacroPad S3"
+    on_press:
+      - script.execute: run_key3_action
+
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_4_macropad_s3
+    key: "4"
+    name: "Key 4 - MacroPad S3"
+    on_press:
+      - script.execute: run_key4_action
+
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_5_macropad_s3
+    key: "5"
+    name: "Key 5 - MacroPad S3"
+    on_press:
+      - script.execute: run_key5_action
+
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_6_macropad_s3
+    key: "6"
+    name: "Key 6 - MacroPad S3"
+    on_press:
+      - script.execute: run_key6_action
+
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_7_macropad_s3
+    key: "7"
+    name: "Key 7 - MacroPad S3"
+    on_press:
+      - script.execute: run_key7_action
+
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_8_macropad_s3
+    key: "8"
+    name: "Key 8 - MacroPad S3"
+    on_press:
+      - script.execute: run_key8_action
+
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_9_macropad_s3
+    key: "9"
+    name: "Key 9 - MacroPad S3"
+    on_press:
+      - script.execute: run_key9_action
+
+
+# [ ==== Globals Info ==== ] #
+# globals: [PLACEHOLDER]
+
+# [ ==== Sensor Info ==== ] #
+# sensor: [PLACEHOLDER]
+
+# [ ==== Text Sensor Info ==== ] #
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "IP Address - MacroPad S3"
+      icon: mdi:ip-network
+  - platform: version
+    name: "ESPHome Version - MacroPad S3"
+    icon: mdi:car-esp
+
+# [ ==== Script Info ==== ] #
+script:
+  - id: set_keypress_led
+    mode: parallel
+    then:
+      - light.turn_on:
+          id: rgb_led
+          red: 100%
+          green: 100%
+          blue: 100%
+          brightness: 100%
+          effect: none
+
+  - id: reset_led_after_delay
+    mode: parallel
+    then:
+      - delay: 5s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 100%
+
+  - id: run_key1_action
+    then:
+      - homeassistant.action:
+          action: ${key_1_action}
+          data:
+            entity_id: ${key_1_entity}
+
+  - id: run_key2_action
+    then:
+      - homeassistant.action:
+          action: ${key_2_action}
+          data:
+            entity_id: ${key_2_entity}
+
+  - id: run_key3_action
+    then:
+      - homeassistant.action:
+          action: ${key_3_action}
+          data:
+            entity_id: ${key_3_entity}
+
+  - id: run_key4_action
+    then:
+      - homeassistant.action:
+          action: ${key_4_action}
+          data:
+            entity_id: ${key_4_entity}
+
+  - id: run_key5_action
+    then:
+      - homeassistant.action:
+          action: ${key_5_action}
+          data:
+            entity_id: ${key_5_entity}
+
+  - id: run_key6_action
+    then:
+      - homeassistant.action:
+          action: ${key_6_action}
+          data:
+            entity_id: ${key_6_entity}
+
+  - id: run_key7_action
+    then:
+      - homeassistant.action:
+          action: ${key_7_action}
+          data:
+            entity_id: ${key_7_entity}
+
+  - id: run_key8_action
+    then:
+      - homeassistant.action:
+          action: ${key_8_action}
+          data:
+            entity_id: ${key_8_entity}
+
+  - id: run_key9_action
+    then:
+      - homeassistant.action:
+          action: ${key_9_action}
+          data:
+            entity_id: ${key_9_entity}
