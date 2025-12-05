@@ -107,6 +107,7 @@ substitutions:
   key_7_action_hold: "light.toggle"
   key_8_action_hold: "switch.toggle"
   key_9_action_hold: "light.toggle"
+
 # [ ==== External Packages ==== ] #
 packages:
  remote_package_files:
