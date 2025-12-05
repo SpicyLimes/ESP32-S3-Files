@@ -235,7 +235,6 @@ text_sensor:
 # [ ==== Script Info ==== ] #
 script:
   - id: handle_key_action
-    internal: true
     parameters:
       key_num: int
     then:
@@ -267,7 +266,6 @@ script:
           call.perform();
 
   - id: handle_key_hold_action
-    internal: true
     parameters:
       key_num: int
     then:
@@ -299,7 +297,6 @@ script:
           call.perform();
 
   - id: reset_led_to_rainbow
-    internal: true
     mode: restart
     then:
       - light.turn_on:
