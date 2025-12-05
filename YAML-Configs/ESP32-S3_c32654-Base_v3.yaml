@@ -59,7 +59,7 @@ light:
     name: "RGB LED - MacroPad S3"
     id: rgb_led
     restore_mode: RESTORE_DEFAULT_ON
-    default_transition_length: 0.5s
+    default_transition_length: 0s
     icon: mdi:led-on
     effects:
       - pulse:
