@@ -79,6 +79,15 @@ substitutions:
   key_7_entity: "light.bathroom_lights_switch"
   key_8_entity: "switch.bathroom_fan"
   key_9_entity: "light.closet_lights_switch"
+  key_1_entity_double: "light.bathroom_lights_switch"
+  key_2_entity_double: "switch.bathroom_fan"
+  key_3_entity_double: "light.closet_lights_switch"
+  key_4_entity_double: "light.bathroom_lights_switch"
+  key_5_entity_double: "switch.bathroom_fan"
+  key_6_entity_double: "light.closet_lights_switch"
+  key_7_entity_double: "light.bathroom_lights_switch"
+  key_8_entity_double: "switch.bathroom_fan"
+  key_9_entity_double: "light.closet_lights_switch"
   key_1_entity_hold: "light.bathroom_lights_switch"
   key_2_entity_hold: "switch.bathroom_fan"
   key_3_entity_hold: "light.closet_lights_switch"
@@ -98,6 +107,15 @@ substitutions:
   key_7_action: "light.toggle"
   key_8_action: "switch.toggle"
   key_9_action: "light.toggle"
+  key_1_action_double: "light.toggle"
+  key_2_action_double: "switch.toggle"
+  key_3_action_double: "light.toggle"
+  key_4_action_double: "light.toggle"
+  key_5_action_double: "switch.toggle"
+  key_6_action_double: "light.toggle"
+  key_7_action_double: "light.toggle"
+  key_8_action_double: "switch.toggle"
+  key_9_action_double: "light.toggle"
   key_1_action_hold: "light.toggle"
   key_2_action_hold: "switch.toggle"
   key_3_action_hold: "light.toggle"
@@ -112,6 +130,6 @@ substitutions:
 packages:
  remote_package_files:
    url: https://github.com/SpicyLimes/ESP32-S3-Files
-   files: YAML-Configs/ESP32-S3_c32654-Package_v2.yaml
+   files: YAML-Configs/ESP32-S3_c32654-Package_v3.yaml
    ref: main
    refresh: 0s
