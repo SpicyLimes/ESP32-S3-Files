@@ -50,303 +50,303 @@ binary_sensor:
       mode: { input: true, pullup: true }
     name: "Boot Button - MacroPad S3"
     icon: mdi:gesture-tap-button
-
-- platform: matrix_keypad
-  keypad_id: macropad_s3_keypad
-  id: key_1_macropad_s3
-  key: "1"
-  name: "Key 1 - MacroPad S3"
-  on_multi_click:
-    # Single Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_action
-            key_num: 1
-    # Double Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - script.execute:
-            id: handle_key_action_double
-            key_num: 1
-    # Press and HOLD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_hold_action
-            key_num: 1
-
-- platform: matrix_keypad
-  keypad_id: macropad_s3_keypad
-  id: key_2_macropad_s3
-  key: "2"
-  name: "Key 2 - MacroPad S3"
-  on_multi_click:
-    # Single Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_action
-            key_num: 2
-    # Double Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - script.execute:
-            id: handle_key_action_double
-            key_num: 2
-    # Press and HOLD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_hold_action
-            key_num: 2
-
-- platform: matrix_keypad
-  keypad_id: macropad_s3_keypad
-  id: key_3_macropad_s3
-  key: "3"
-  name: "Key 3 - MacroPad S3"
-  on_multi_click:
-    # Single Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_action
-            key_num: 3
-    # Double Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - script.execute:
-            id: handle_key_action_double
-            key_num: 3
-    # Press and HOLD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_hold_action
-            key_num: 3
-
-- platform: matrix_keypad
-  keypad_id: macropad_s3_keypad
-  id: key_4_macropad_s3
-  key: "4"
-  name: "Key 4 - MacroPad S3"
-  on_multi_click:
-    # Single Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_action
-            key_num: 4
-    # Double Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - script.execute:
-            id: handle_key_action_double
-            key_num: 4
-    # Press and HOLD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_hold_action
-            key_num: 4
-
-- platform: matrix_keypad
-  keypad_id: macropad_s3_keypad
-  id: key_5_macropad_s3
-  key: "5"
-  name: "Key 5 - MacroPad S3"
-  on_multi_click:
-    # Single Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_action
-            key_num: 5
-    # Double Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - script.execute:
-            id: handle_key_action_double
-            key_num: 5
-    # Press and HOLD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_hold_action
-            key_num: 5
-
-- platform: matrix_keypad
-  keypad_id: macropad_s3_keypad
-  id: key_6_macropad_s3
-  key: "6"
-  name: "Key 6 - MacroPad S3"
-  on_multi_click:
-    # Single Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_action
-            key_num: 6
-    # Double Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - script.execute:
-            id: handle_key_action_double
-            key_num: 6
-    # Press and HOLD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_hold_action
-            key_num: 6
-
-- platform: matrix_keypad
-  keypad_id: macropad_s3_keypad
-  id: key_7_macropad_s3
-  key: "7"
-  name: "Key 7 - MacroPad S3"
-  on_multi_click:
-    # Single Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_action
-            key_num: 7
-    # Double Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - script.execute:
-            id: handle_key_action_double
-            key_num: 7
-    # Press and HOLD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_hold_action
-            key_num: 7
-
-- platform: matrix_keypad
-  keypad_id: macropad_s3_keypad
-  id: key_8_macropad_s3
-  key: "8"
-  name: "Key 8 - MacroPad S3"
-  on_multi_click:
-    # Single Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_action
-            key_num: 8
-    # Double Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - script.execute:
-            id: handle_key_action_double
-            key_num: 8
-    # Press and HOLD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_hold_action
-            key_num: 8
-
-- platform: matrix_keypad
-  keypad_id: macropad_s3_keypad
-  id: key_9_macropad_s3
-  key: "9"
-  name: "Key 9 - MacroPad S3"
-  on_multi_click:
-    # Single Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_action
-            key_num: 9
-    # Double Press
-    - timing:
-        - ON for at most 1s
-        - OFF for at most 1s
-        - ON for at most 1s
-        - OFF for at least 0.2s
-      then:
-        - script.execute:
-            id: handle_key_action_double
-            key_num: 9
-    # Press and HOLD
-    - timing:
-        - ON for 1s to 2s
-        - OFF for at least 0.5s
-      then:
-        - script.execute:
-            id: handle_key_hold_action
-            key_num: 9
+  
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_1_macropad_s3
+    key: "1"
+    name: "Key 1 - MacroPad S3"
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 1
+      # Double Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at most 1s
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - script.execute:
+              id: handle_key_action_double
+              key_num: 1
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 1
+  
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_2_macropad_s3
+    key: "2"
+    name: "Key 2 - MacroPad S3"
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 2
+      # Double Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at most 1s
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - script.execute:
+              id: handle_key_action_double
+              key_num: 2
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 2
+  
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_3_macropad_s3
+    key: "3"
+    name: "Key 3 - MacroPad S3"
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 3
+      # Double Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at most 1s
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - script.execute:
+              id: handle_key_action_double
+              key_num: 3
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 3
+  
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_4_macropad_s3
+    key: "4"
+    name: "Key 4 - MacroPad S3"
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 4
+      # Double Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at most 1s
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - script.execute:
+              id: handle_key_action_double
+              key_num: 4
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 4
+  
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_5_macropad_s3
+    key: "5"
+    name: "Key 5 - MacroPad S3"
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 5
+      # Double Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at most 1s
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - script.execute:
+              id: handle_key_action_double
+              key_num: 5
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 5
+  
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_6_macropad_s3
+    key: "6"
+    name: "Key 6 - MacroPad S3"
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 6
+      # Double Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at most 1s
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - script.execute:
+              id: handle_key_action_double
+              key_num: 6
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 6
+  
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_7_macropad_s3
+    key: "7"
+    name: "Key 7 - MacroPad S3"
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 7
+      # Double Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at most 1s
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - script.execute:
+              id: handle_key_action_double
+              key_num: 7
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 7
+  
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_8_macropad_s3
+    key: "8"
+    name: "Key 8 - MacroPad S3"
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 8
+      # Double Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at most 1s
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - script.execute:
+              id: handle_key_action_double
+              key_num: 8
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 8
+  
+  - platform: matrix_keypad
+    keypad_id: macropad_s3_keypad
+    id: key_9_macropad_s3
+    key: "9"
+    name: "Key 9 - MacroPad S3"
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 9
+      # Double Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at most 1s
+          - ON for at most 1s
+          - OFF for at least 0.2s
+        then:
+          - script.execute:
+              id: handle_key_action_double
+              key_num: 9
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 9
 
 # [ ==== Text Sensor Info ==== ] #
 text_sensor:
