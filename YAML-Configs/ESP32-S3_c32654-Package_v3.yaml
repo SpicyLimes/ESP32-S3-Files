@@ -247,29 +247,40 @@ script:
           brightness: 100%
           effect: none
       # Execute Home Assistant action
-      - lambda: |-
-          std::string entity;
-          std::string action;
-          switch(key_num) {
-            case 1: entity = "${key_1_entity}"; action = "${key_1_action}"; break;
-            case 2: entity = "${key_2_entity}"; action = "${key_2_action}"; break;
-            case 3: entity = "${key_3_entity}"; action = "${key_3_action}"; break;
-            case 4: entity = "${key_4_entity}"; action = "${key_4_action}"; break;
-            case 5: entity = "${key_5_entity}"; action = "${key_5_action}"; break;
-            case 6: entity = "${key_6_entity}"; action = "${key_6_action}"; break;
-            case 7: entity = "${key_7_entity}"; action = "${key_7_action}"; break;
-            case 8: entity = "${key_8_entity}"; action = "${key_8_action}"; break;
-            case 9: entity = "${key_9_entity}"; action = "${key_9_action}"; break;
-          }
-          auto call = id(homeassistant).call_service(action.c_str());
-          call.add_data("entity_id", entity.c_str());
-          call.perform();
+      - homeassistant.action:
+          action: !lambda |-
+            switch(key_num) {
+              case 1: return "${key_1_action}";
+              case 2: return "${key_2_action}";
+              case 3: return "${key_3_action}";
+              case 4: return "${key_4_action}";
+              case 5: return "${key_5_action}";
+              case 6: return "${key_6_action}";
+              case 7: return "${key_7_action}";
+              case 8: return "${key_8_action}";
+              case 9: return "${key_9_action}";
+            }
+            return "";
+          data:
+            entity_id: !lambda |-
+              switch(key_num) {
+                case 1: return "${key_1_entity}";
+                case 2: return "${key_2_entity}";
+                case 3: return "${key_3_entity}";
+                case 4: return "${key_4_entity}";
+                case 5: return "${key_5_entity}";
+                case 6: return "${key_6_entity}";
+                case 7: return "${key_7_entity}";
+                case 8: return "${key_8_entity}";
+                case 9: return "${key_9_entity}";
+              }
+              return "";
 
   - id: handle_key_hold_action
     parameters:
       key_num: int
     then:
-      # Set LED to white on press
+      # Set LED to blue on hold
       - light.turn_on:
           id: rgb_led
           red: 0%
@@ -277,24 +288,35 @@ script:
           blue: 100%
           brightness: 100%
           effect: none
-      # Execute Home Assistant action
-      - lambda: |-
-          std::string entity;
-          std::string action;
-          switch(key_num) {
-            case 1: entity = "${key_1_entity_hold}"; action = "${key_1_action_hold}"; break;
-            case 2: entity = "${key_2_entity_hold}"; action = "${key_2_action_hold}"; break;
-            case 3: entity = "${key_3_entity_hold}"; action = "${key_3_action_hold}"; break;
-            case 4: entity = "${key_4_entity_hold}"; action = "${key_4_action_hold}"; break;
-            case 5: entity = "${key_5_entity_hold}"; action = "${key_5_action_hold}"; break;
-            case 6: entity = "${key_6_entity_hold}"; action = "${key_6_action_hold}"; break;
-            case 7: entity = "${key_7_entity_hold}"; action = "${key_7_action_hold}"; break;
-            case 8: entity = "${key_8_entity_hold}"; action = "${key_8_action_hold}"; break;
-            case 9: entity = "${key_9_entity_hold}"; action = "${key_9_action_hold}"; break;
-          }
-          auto call = id(homeassistant).call_service(action.c_str());
-          call.add_data("entity_id", entity.c_str());
-          call.perform();
+      # Execute Home Assistant hold action
+      - homeassistant.action:
+          action: !lambda |-
+            switch(key_num) {
+              case 1: return "${key_1_action_hold}";
+              case 2: return "${key_2_action_hold}";
+              case 3: return "${key_3_action_hold}";
+              case 4: return "${key_4_action_hold}";
+              case 5: return "${key_5_action_hold}";
+              case 6: return "${key_6_action_hold}";
+              case 7: return "${key_7_action_hold}";
+              case 8: return "${key_8_action_hold}";
+              case 9: return "${key_9_action_hold}";
+            }
+            return "";
+          data:
+            entity_id: !lambda |-
+              switch(key_num) {
+                case 1: return "${key_1_entity_hold}";
+                case 2: return "${key_2_entity_hold}";
+                case 3: return "${key_3_entity_hold}";
+                case 4: return "${key_4_entity_hold}";
+                case 5: return "${key_5_entity_hold}";
+                case 6: return "${key_6_entity_hold}";
+                case 7: return "${key_7_entity_hold}";
+                case 8: return "${key_8_entity_hold}";
+                case 9: return "${key_9_entity_hold}";
+              }
+              return "";
 
   - id: reset_led_to_rainbow
     mode: restart
