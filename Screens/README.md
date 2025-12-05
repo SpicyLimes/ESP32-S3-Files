@@ -23,5 +23,3 @@
 
 ### Resources:
 * [Amazon Link](https://www.amazon.com/dp/B081JDXBWC)
-
-![OLED Screen](https://github.com/SpicyLimes/ESP32-S3-Files/Screens/OLED_Screen_Image_1.jpg)
