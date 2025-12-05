@@ -34,6 +34,12 @@ matrix_keypad:
   keys: "123456789"
   has_diodes: false
 
+# [ ==== Globals Info ==== ] #
+# globals: [PLACEHOLDER]
+
+# [ ==== Sensor Info ==== ] #
+# sensor: [PLACEHOLDER]
+
 # [ ==== Binary Sensors ==== ]
 binary_sensor:
   - platform: gpio
@@ -51,7 +57,18 @@ binary_sensor:
     key: "1"
     name: "Key 1 - MacroPad S3"
     on_press:
-      - script.execute: run_key1_action
+      - script.execute:
+          id: handle_key_action
+          key_num: 1
+    on_release:
+      - script.execute: reset_led_to_rainbow
+    on_click:
+      - min_length: 2s
+        max_length: 5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 1
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -59,7 +76,18 @@ binary_sensor:
     key: "2"
     name: "Key 2 - MacroPad S3"
     on_press:
-      - script.execute: run_key2_action
+      - script.execute:
+          id: handle_key_action
+          key_num: 2
+    on_release:
+      - script.execute: reset_led_to_rainbow
+    on_click:
+      - min_length: 2s
+        max_length: 5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 2
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -67,7 +95,18 @@ binary_sensor:
     key: "3"
     name: "Key 3 - MacroPad S3"
     on_press:
-      - script.execute: run_key3_action
+      - script.execute:
+          id: handle_key_action
+          key_num: 3
+    on_release:
+      - script.execute: reset_led_to_rainbow
+    on_click:
+      - min_length: 2s
+        max_length: 5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 3
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -75,7 +114,18 @@ binary_sensor:
     key: "4"
     name: "Key 4 - MacroPad S3"
     on_press:
-      - script.execute: run_key4_action
+      - script.execute:
+          id: handle_key_action
+          key_num: 4
+    on_release:
+      - script.execute: reset_led_to_rainbow
+    on_click:
+      - min_length: 2s
+        max_length: 5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 4
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -83,7 +133,18 @@ binary_sensor:
     key: "5"
     name: "Key 5 - MacroPad S3"
     on_press:
-      - script.execute: run_key5_action
+      - script.execute:
+          id: handle_key_action
+          key_num: 5
+    on_release:
+      - script.execute: reset_led_to_rainbow
+    on_click:
+      - min_length: 2s
+        max_length: 5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 5
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -91,7 +152,18 @@ binary_sensor:
     key: "6"
     name: "Key 6 - MacroPad S3"
     on_press:
-      - script.execute: run_key6_action
+      - script.execute:
+          id: handle_key_action
+          key_num: 6
+    on_release:
+      - script.execute: reset_led_to_rainbow
+    on_click:
+      - min_length: 2s
+        max_length: 5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 6
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -99,7 +171,18 @@ binary_sensor:
     key: "7"
     name: "Key 7 - MacroPad S3"
     on_press:
-      - script.execute: run_key7_action
+      - script.execute:
+          id: handle_key_action
+          key_num: 7
+    on_release:
+      - script.execute: reset_led_to_rainbow
+    on_click:
+      - min_length: 2s
+        max_length: 5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 7
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -107,7 +190,18 @@ binary_sensor:
     key: "8"
     name: "Key 8 - MacroPad S3"
     on_press:
-      - script.execute: run_key8_action
+      - script.execute:
+          id: handle_key_action
+          key_num: 8
+    on_release:
+      - script.execute: reset_led_to_rainbow
+    on_click:
+      - min_length: 2s
+        max_length: 5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 8
 
   - platform: matrix_keypad
     keypad_id: macropad_s3_keypad
@@ -115,14 +209,18 @@ binary_sensor:
     key: "9"
     name: "Key 9 - MacroPad S3"
     on_press:
-      - script.execute: run_key9_action
-
-
-# [ ==== Globals Info ==== ] #
-# globals: [PLACEHOLDER]
-
-# [ ==== Sensor Info ==== ] #
-# sensor: [PLACEHOLDER]
+      - script.execute:
+          id: handle_key_action
+          key_num: 9
+    on_release:
+      - script.execute: reset_led_to_rainbow
+    on_click:
+      - min_length: 2s
+        max_length: 5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 9
 
 # [ ==== Text Sensor Info ==== ] #
 text_sensor:
@@ -136,9 +234,12 @@ text_sensor:
 
 # [ ==== Script Info ==== ] #
 script:
-  - id: set_keypress_led
-    mode: parallel
+  - id: handle_key_action
+    internal: true
+    parameters:
+      key_num: int
     then:
+      # Set LED to white on press
       - light.turn_on:
           id: rgb_led
           red: 100%
@@ -146,75 +247,62 @@ script:
           blue: 100%
           brightness: 100%
           effect: none
+      # Execute Home Assistant action
+      - lambda: |-
+          std::string entity;
+          std::string action;
+          switch(key_num) {
+            case 1: entity = "${key_1_entity}"; action = "${key_1_action}"; break;
+            case 2: entity = "${key_2_entity}"; action = "${key_2_action}"; break;
+            case 3: entity = "${key_3_entity}"; action = "${key_3_action}"; break;
+            case 4: entity = "${key_4_entity}"; action = "${key_4_action}"; break;
+            case 5: entity = "${key_5_entity}"; action = "${key_5_action}"; break;
+            case 6: entity = "${key_6_entity}"; action = "${key_6_action}"; break;
+            case 7: entity = "${key_7_entity}"; action = "${key_7_action}"; break;
+            case 8: entity = "${key_8_entity}"; action = "${key_8_action}"; break;
+            case 9: entity = "${key_9_entity}"; action = "${key_9_action}"; break;
+          }
+          auto call = id(homeassistant).call_service(action.c_str());
+          call.add_data("entity_id", entity.c_str());
+          call.perform();
 
-  - id: reset_led_after_delay
-    mode: parallel
+  - id: handle_key_hold_action
+    internal: true
+    parameters:
+      key_num: int
     then:
-      - delay: 5s
+      # Set LED to white on press
+      - light.turn_on:
+          id: rgb_led
+          red: 0%
+          green: 20%
+          blue: 100%
+          brightness: 100%
+          effect: none
+      # Execute Home Assistant action
+      - lambda: |-
+          std::string entity;
+          std::string action;
+          switch(key_num) {
+            case 1: entity = "${key_1_entity_hold}"; action = "${key_1_action_hold}"; break;
+            case 2: entity = "${key_2_entity_hold}"; action = "${key_2_action_hold}"; break;
+            case 3: entity = "${key_3_entity_hold}"; action = "${key_3_action_hold}"; break;
+            case 4: entity = "${key_4_entity_hold}"; action = "${key_4_action_hold}"; break;
+            case 5: entity = "${key_5_entity_hold}"; action = "${key_5_action_hold}"; break;
+            case 6: entity = "${key_6_entity_hold}"; action = "${key_6_action_hold}"; break;
+            case 7: entity = "${key_7_entity_hold}"; action = "${key_7_action_hold}"; break;
+            case 8: entity = "${key_8_entity_hold}"; action = "${key_8_action_hold}"; break;
+            case 9: entity = "${key_9_entity_hold}"; action = "${key_9_action_hold}"; break;
+          }
+          auto call = id(homeassistant).call_service(action.c_str());
+          call.add_data("entity_id", entity.c_str());
+          call.perform();
+
+  - id: reset_led_to_rainbow
+    internal: true
+    mode: restart
+    then:
       - light.turn_on:
           id: rgb_led
           effect: rainbow
           brightness: 100%
-
-  - id: run_key1_action
-    then:
-      - homeassistant.action:
-          action: ${key_1_action}
-          data:
-            entity_id: ${key_1_entity}
-
-  - id: run_key2_action
-    then:
-      - homeassistant.action:
-          action: ${key_2_action}
-          data:
-            entity_id: ${key_2_entity}
-
-  - id: run_key3_action
-    then:
-      - homeassistant.action:
-          action: ${key_3_action}
-          data:
-            entity_id: ${key_3_entity}
-
-  - id: run_key4_action
-    then:
-      - homeassistant.action:
-          action: ${key_4_action}
-          data:
-            entity_id: ${key_4_entity}
-
-  - id: run_key5_action
-    then:
-      - homeassistant.action:
-          action: ${key_5_action}
-          data:
-            entity_id: ${key_5_entity}
-
-  - id: run_key6_action
-    then:
-      - homeassistant.action:
-          action: ${key_6_action}
-          data:
-            entity_id: ${key_6_entity}
-
-  - id: run_key7_action
-    then:
-      - homeassistant.action:
-          action: ${key_7_action}
-          data:
-            entity_id: ${key_7_entity}
-
-  - id: run_key8_action
-    then:
-      - homeassistant.action:
-          action: ${key_8_action}
-          data:
-            entity_id: ${key_8_entity}
-
-  - id: run_key9_action
-    then:
-      - homeassistant.action:
-          action: ${key_9_action}
-          data:
-            entity_id: ${key_9_entity}
