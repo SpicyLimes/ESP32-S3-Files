@@ -79,6 +79,15 @@ substitutions:
   key_7_entity: "light.bathroom_lights_switch"
   key_8_entity: "switch.bathroom_fan"
   key_9_entity: "light.closet_lights_switch"
+  key_1_entity_hold: "light.bathroom_lights_switch"
+  key_2_entity_hold: "switch.bathroom_fan"
+  key_3_entity_hold: "light.closet_lights_switch"
+  key_4_entity_hold: "light.bathroom_lights_switch"
+  key_5_entity_hold: "switch.bathroom_fan"
+  key_6_entity_hold: "light.closet_lights_switch"
+  key_7_entity_hold: "light.bathroom_lights_switch"
+  key_8_entity_hold: "switch.bathroom_fan"
+  key_9_entity_hold: "light.closet_lights_switch"
   # Actions
   key_1_action: "light.toggle"
   key_2_action: "switch.toggle"
@@ -89,7 +98,15 @@ substitutions:
   key_7_action: "light.toggle"
   key_8_action: "switch.toggle"
   key_9_action: "light.toggle"
-
+  key_1_action_hold: "light.toggle"
+  key_2_action_hold: "switch.toggle"
+  key_3_action_hold: "light.toggle"
+  key_4_action_hold: "light.toggle"
+  key_5_action_hold: "switch.toggle"
+  key_6_action_hold: "light.toggle"
+  key_7_action_hold: "light.toggle"
+  key_8_action_hold: "switch.toggle"
+  key_9_action_hold: "light.toggle"
 # [ ==== External Packages ==== ] #
 packages:
  remote_package_files:
