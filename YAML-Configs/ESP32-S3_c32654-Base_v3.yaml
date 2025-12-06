@@ -76,9 +76,9 @@ substitutions:
   key_4_entity: "light.bathroom_lights_switch"
   key_5_entity: "light.bathroom_lights_switch"
   key_6_entity: "light.bathroom_lights_switch"
-  key_7_entity: "light.bathroom_lights_switch"
-  key_8_entity: "light.bathroom_lights_switch"
-  key_9_entity: "light.bathroom_lights_switch"
+  key_7_entity: "script.apartment_ambient_lights" # Apartment Ambiance
+  key_8_entity: "script.night_light" # Night Night Lights
+  key_9_entity: "light.apartment_lights" # Goodnight
   key_1_entity_double: "switch.bathroom_fan"
   key_2_entity_double: "switch.bathroom_fan"
   key_3_entity_double: "switch.bathroom_fan"
@@ -104,9 +104,9 @@ substitutions:
   key_4_action: "light.toggle"
   key_5_action: "light.toggle"
   key_6_action: "light.toggle"
-  key_7_action: "light.toggle"
-  key_8_action: "light.toggle"
-  key_9_action: "light.toggle"
+  key_7_action: "script.turn_on" # Apartment Ambiance
+  key_8_action: "script.turn_on" # Night Night Lights
+  key_9_action: "light.turn_off" # Goodnight
   key_1_action_double: "switch.toggle"
   key_2_action_double: "switch.toggle"
   key_3_action_double: "switch.toggle"
