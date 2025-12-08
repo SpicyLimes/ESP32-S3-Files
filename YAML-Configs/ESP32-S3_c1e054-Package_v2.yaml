@@ -40,7 +40,6 @@ binary_sensor:
     id: key_1_arcadepad_s3
     name: "Key 1 - ArcadePad S3"
     icon: mdi:gamepad-circle
-    key: "1"
     pin:
       number: GPIO4
       mode:
@@ -69,7 +68,6 @@ binary_sensor:
     id: key_2_arcadepad_s3
     name: "Key 2 - ArcadePad S3"
     icon: mdi:gamepad-circle-up
-    key: "2"
     pin:
       number: GPIO5
       mode:
@@ -98,7 +96,6 @@ binary_sensor:
     id: key_3_arcadepad_s3
     name: "Key 3 - ArcadePad S3"
     icon: mdi:gamepad-circle-right
-    key: "3"
     pin:
       number: GPIO6
       mode:
@@ -127,7 +124,6 @@ binary_sensor:
     id: key_4_arcadepad_s3
     name: "Key 4 - ArcadePad S3"
     icon: mdi:nintendo-game-boy
-    key: "4"
     pin:
       number: GPIO7
       mode:
@@ -156,7 +152,6 @@ binary_sensor:
     id: key_5_arcadepad_s3
     name: "Key 5 - ArcadePad S3"
     icon: mdi:gamepad-circle-down
-    key: "5"
     pin:
       number: GPIO15
       mode:
@@ -185,7 +180,6 @@ binary_sensor:
     id: key_6_arcadepad_s3
     name: "Key 6 - ArcadePad S3"
     icon: mdi:gamepad-circle-left
-    key: "6"
     pin:
       number: GPIO16
       mode:
@@ -214,7 +208,6 @@ binary_sensor:
     id: key_7_arcadepad_s3
     name: "Key 7 - ArcadePad S3"
     icon: mdi:gamepad-circle-outline
-    key: "7"
     pin:
       number: GPIO17
       mode:
