@@ -58,36 +58,41 @@ light:
 
 # [ ==== Substitutions ==== ] #
 substitutions:
-  # Entities
-  key_1_entity: "light.bathroom_lights_switch" # 
-  key_2_entity: "light.bathroom_lights_switch" # 
-  key_3_entity: "light.bathroom_lights_switch" # 
-  key_4_entity: "light.bathroom_lights_switch" # 
-  key_5_entity: "light.bathroom_lights_switch" # 
-  key_6_entity: "light.bathroom_lights_switch" # 
-  key_7_entity: "light.bathroom_lights_switch" # 
-  key_1_entity_hold: "light.closet_lights_switch" # 
-  key_2_entity_hold: "light.closet_lights_switch" # 
-  key_3_entity_hold: "light.closet_lights_switch" # 
-  key_4_entity_hold: "light.closet_lights_switch" # 
-  key_5_entity_hold: "light.closet_lights_switch" # 
-  key_6_entity_hold: "light.closet_lights_switch" # 
-  key_7_entity_hold: "light.closet_lights_switch" # 
-  # Actions
-  key_1_action: "light.toggle" # 
-  key_2_action: "light.toggle" # 
-  key_3_action: "light.toggle" # 
-  key_4_action: "light.toggle" # 
-  key_5_action: "light.toggle" # 
-  key_6_action: "light.toggle" # 
-  key_7_action: "light.toggle" # 
-  key_1_action_hold: "light.toggle" # 
-  key_2_action_hold: "light.toggle" # 
-  key_3_action_hold: "light.toggle" # 
-  key_4_action_hold: "light.toggle" # 
-  key_5_action_hold: "light.toggle" # 
-  key_6_action_hold: "light.toggle" # 
-  key_7_action_hold: "light.toggle" # 
+  # Button 1: Press + Hold Actions
+  key_1_entity: "switch.coffee_maker" # Coffee Maker Toggle
+  key_1_action: "switch.toggle" 
+  key_1_entity_hold: "" # 
+  key_1_action_hold: ""
+  # Button 2: Press + Hold Actions
+  key_2_entity: "" # 
+  key_2_action: ""
+  key_2_entity_hold: "" # 
+  key_2_action_hold: ""
+  # Button 3: Press + Hold Actions
+  key_3_entity: "" # 
+  key_3_action: ""
+  key_3_entity_hold: "" # 
+  key_3_action_hold: ""
+  # Button 4: Press + Hold Actions
+  key_4_entity: "lock.front_door_lock" # Front Door Lock
+  key_4_action: "lock.lock" 
+  key_4_entity_hold: "lock.front_door_lock" # Front Door Unlock
+  key_4_action_hold: "lock.unlock"
+  # Button 5: Press + Hold Actions
+  key_5_entity: "" # 
+  key_5_action: ""
+  key_5_entity_hold: "" # 
+  key_5_action_hold: ""
+  # Button 6: Press + Hold Actions
+  key_6_entity: "script.apartment_ambient_lights" # Apartment Ambient Lighting
+  key_6_action: "script.turn_on"
+  key_6_entity_hold: "" # 
+  key_6_action_hold: ""
+  # Button 7: Press + Hold Actions
+  key_7_entity: "script.night_light" # Studio Night Night Lights
+  key_7_action: "script.turn_on"
+  key_7_entity_hold: "light.apartment_lights" # Goodnight Lights
+  key_7_action_hold: "light.turn_off"
 
 # [ ==== External Packages ==== ] #
 packages:
