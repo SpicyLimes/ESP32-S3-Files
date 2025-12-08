@@ -1,98 +1,332 @@
-# [ ==== esphome-web-c1e054.yaml ==== ] #
-esphome:
-  name: esphome-web-c1e054 # Version 2
-  friendly_name: ESPHome ArcadePad S3
-  min_version: 2025.10.0
-  name_add_mac_suffix: false
+# ESPHome ArcadePad S3
+# esphome-web-c1e054 Version 2
+# File Description: External Package
 
-# [ ==== PCB Board Info ==== ] #
-esp32:
-  variant: esp32s3
-  framework:
-    type: esp-idf
+# [ ==== Globals Info ==== ] #
+# globals: [PLACEHOLDER]
 
-# [ ==== Logging, API, and Updates ==== ] #
-logger:
-api:
-ota:
-  - platform: esphome
+# [ ==== Sensor Info ==== ] #
+# sensor: [PLACEHOLDER]
 
-# [ ==== WiFi Info ==== ] #
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-  fast_connect: true
-  on_connect:
+# [ ==== Time Info ==== ] #
+time:
+  - platform: homeassistant
+    id: ha_time
+    timezone: "America/Chicago"
+
+# [ ==== Web Server Info ==== ] #
+web_server:
+  port: 80
+  version: 3
+
+# [ ==== Buttons ==== ] #
+button:
+  - platform: factory_reset
+    name: "Factory Reset - ArcadePad S3"
+    icon: mdi:restart
+
+# [ ==== Binary Sensors ==== ]
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      ignore_strapping_warning: true
+      inverted: true
+      mode: { input: true, pullup: true }
+    name: "Boot Button - ArcadePad S3"
+    icon: mdi:gesture-tap-button
+  
+  - platform: gpio
+    id: key_1_arcadepad_s3
+    name: "Key 1 - ArcadePad S3"
+    icon: mdi:gamepad-circle
+    key: "1"
+    pin:
+      number: GPIO4
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 1
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 1
+  
+  - platform: gpio
+    id: key_2_arcadepad_s3
+    name: "Key 2 - ArcadePad S3"
+    icon: mdi:gamepad-circle-up
+    key: "2"
+    pin:
+      number: GPIO5
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 2
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 2
+  
+  - platform: gpio
+    id: key_3_arcadepad_s3
+    name: "Key 3 - ArcadePad S3"
+    icon: mdi:gamepad-circle-right
+    key: "3"
+    pin:
+      number: GPIO6
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 3
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 3
+  
+  - platform: gpio
+    id: key_4_arcadepad_s3
+    name: "Key 4 - ArcadePad S3"
+    icon: mdi:nintendo-game-boy
+    key: "4"
+    pin:
+      number: GPIO7
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 4
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 4
+  
+  - platform: gpio
+    id: key_5_arcadepad_s3
+    name: "Key 5 - ArcadePad S3"
+    icon: mdi:gamepad-circle-down
+    key: "5"
+    pin:
+      number: GPIO15
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 5
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 5
+  
+  - platform: gpio
+    id: key_6_arcadepad_s3
+    name: "Key 6 - ArcadePad S3"
+    icon: mdi:gamepad-circle-left
+    key: "6"
+    pin:
+      number: GPIO16
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 6
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 6
+  
+  - platform: gpio
+    id: key_7_arcadepad_s3
+    name: "Key 7 - ArcadePad S3"
+    icon: mdi:gamepad-circle-outline
+    key: "7"
+    pin:
+      number: GPIO17
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    on_multi_click:
+      # Single Press
+      - timing:
+          - ON for at most 1s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_action
+              key_num: 7
+      # Press and HOLD
+      - timing:
+          - ON for 1s to 2s
+          - OFF for at least 0.5s
+        then:
+          - script.execute:
+              id: handle_key_hold_action
+              key_num: 7
+
+# [ ==== Text Sensor Info ==== ] #
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "IP Address - ArcadePad S3"
+      icon: mdi:ip-network
+  - platform: version
+    name: "ESPHome Version - ArcadePad S3"
+    icon: mdi:car-esp
+
+# [ ==== Script Info ==== ] #
+script:
+  - id: handle_key_action
+    parameters:
+      key_num: int
     then:
+      - light.turn_on:
+          id: rgb_led
+          red: 0%
+          green: 0%
+          blue: 100%
+          brightness: 100%
+      - homeassistant.action:
+          action: !lambda |-
+            switch(key_num) {
+              case 1: return "${key_1_action}";
+              case 2: return "${key_2_action}";
+              case 3: return "${key_3_action}";
+              case 4: return "${key_4_action}";
+              case 5: return "${key_5_action}";
+              case 6: return "${key_6_action}";
+              case 7: return "${key_7_action}";
+            }
+            return "";
+          data:
+            entity_id: !lambda |-
+              switch(key_num) {
+                case 1: return "${key_1_entity}";
+                case 2: return "${key_2_entity}";
+                case 3: return "${key_3_entity}";
+                case 4: return "${key_4_entity}";
+                case 5: return "${key_5_entity}";
+                case 6: return "${key_6_entity}";
+                case 7: return "${key_7_entity}";
+              }
+              return "";
+      - delay: 5s
       - light.turn_on:
           id: rgb_led
           effect: rainbow
           brightness: 100%
-  on_disconnect:
+
+  - id: handle_key_hold_action
+    parameters:
+      key_num: int
     then:
       - light.turn_on:
           id: rgb_led
-          effect: pulse
           red: 100%
-          green: 0%
-          blue: 0%
+          green: 100%
+          blue: 100%
           brightness: 100%
-
-# [ ==== RGB LED (WS2812B) Info ==== ] #
-light:
-  - platform: esp32_rmt_led_strip
-    rgb_order: GRB
-    pin: GPIO48
-    num_leds: 1
-    chipset: WS2812
-    name: "RGB LED - ArcadePad S3"
-    id: rgb_led
-    restore_mode: RESTORE_DEFAULT_ON
-    default_transition_length: 0.15s
-    icon: mdi:led-on
-    effects:
-      - pulse:
-      - strobe:
-      - flicker:
-      - addressable_rainbow:
-
-# [ ==== Substitutions ==== ] #
-substitutions:
-  # Entities
-  key_1_entity: "light.bathroom_lights_switch" # 
-  key_2_entity: "light.bathroom_lights_switch" # 
-  key_3_entity: "light.bathroom_lights_switch" # 
-  key_4_entity: "light.bathroom_lights_switch" # 
-  key_5_entity: "light.bathroom_lights_switch" # 
-  key_6_entity: "light.bathroom_lights_switch" # 
-  key_7_entity: "light.bathroom_lights_switch" # 
-  key_1_entity_hold: "light.closet_lights_switch" # 
-  key_2_entity_hold: "light.closet_lights_switch" # 
-  key_3_entity_hold: "light.closet_lights_switch" # 
-  key_4_entity_hold: "light.closet_lights_switch" # 
-  key_5_entity_hold: "light.closet_lights_switch" # 
-  key_6_entity_hold: "light.closet_lights_switch" # 
-  key_7_entity_hold: "light.closet_lights_switch" # 
-  # Actions
-  key_1_action: "light.toggle" # 
-  key_2_action: "light.toggle" # 
-  key_3_action: "light.toggle" # 
-  key_4_action: "light.toggle" # 
-  key_5_action: "light.toggle" # 
-  key_6_action: "light.toggle" # 
-  key_7_action: "light.toggle" # 
-  key_1_action_hold: "light.toggle" # 
-  key_2_action_hold: "light.toggle" # 
-  key_3_action_hold: "light.toggle" # 
-  key_4_action_hold: "light.toggle" # 
-  key_5_action_hold: "light.toggle" # 
-  key_6_action_hold: "light.toggle" # 
-  key_7_action_hold: "light.toggle" # 
-
-# [ ==== External Packages ==== ] #
-packages:
- remote_package_files:
-   url: https://github.com/SpicyLimes/ESP32-S3-Files
-   files: YAML-Configs/ESP32-S3_c1e054-Package_v2.yaml
-   ref: main
-   refresh: 0s
+      - homeassistant.action:
+          action: !lambda |-
+            switch(key_num) {
+              case 1: return "${key_1_action_hold}";
+              case 2: return "${key_2_action_hold}";
+              case 3: return "${key_3_action_hold}";
+              case 4: return "${key_4_action_hold}";
+              case 5: return "${key_5_action_hold}";
+              case 6: return "${key_6_action_hold}";
+              case 7: return "${key_7_action_hold}";
+            }
+            return "";
+          data:
+            entity_id: !lambda |-
+              switch(key_num) {
+                case 1: return "${key_1_entity_hold}";
+                case 2: return "${key_2_entity_hold}";
+                case 3: return "${key_3_entity_hold}";
+                case 4: return "${key_4_entity_hold}";
+                case 5: return "${key_5_entity_hold}";
+                case 6: return "${key_6_entity_hold}";
+                case 7: return "${key_7_entity_hold}";
+              }
+              return "";
+      - delay: 5s
+      - light.turn_on:
+          id: rgb_led
+          effect: rainbow
+          brightness: 100%
